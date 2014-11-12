@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/var/www/html/php_todo'
+let g:netrw_dirhist_2='/usr/local/src/tool'
+let g:netrw_dirhist_3='/etc/cron.daily'
