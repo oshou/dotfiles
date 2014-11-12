@@ -1,8 +1,5 @@
 # .bashrc
 
-# bash display setting
-export PS1="[\u@\h:\w]\$ "
-
 # User specific aliases and functions
 alias rm='rm -i'
 alias cp='cp -i'
