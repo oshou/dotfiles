@@ -2,5 +2,6 @@ evervim
 neoBundle.vim
 neobundle.vim
 nerdtree
-restart.vim
 syntastic
+vimproc.vim
+vimshell.vim
