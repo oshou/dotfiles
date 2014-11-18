@@ -3,8 +3,13 @@
 	email = adf1985adf@gmail.com
 [alias]
 	co = checkout
-    c  = commit
+    c  = commit -m
+    ca = commit -am
     p  = push
     a  = add
     s  = status
     l  = log
+    i  = init
+    ra = remote add
+    rv = remote -v
+    rrm= remote rm
