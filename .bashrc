@@ -5,7 +5,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias ll="ls -la"
-alias h="history"
+alias h="history | tail"
 alias j="jobs"
 
 # Source global definitions
