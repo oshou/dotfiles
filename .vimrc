@@ -17,14 +17,13 @@ call neobundle#end()
 "Neobundle自体を管理"
 NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 
-"その他管理するプラグイン"
+"その他プラグイン"
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
-NeoBundle 'git://github.com/kakkyz81/evervim.git'
 NeoBundle 'git://github.com/Shougo/vimproc.vim.git'
 NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
 
-
+"基本設定"
 set title
 set number
 set ruler
@@ -34,6 +33,7 @@ set laststatus=2
 set cmdheight=2
 set showcmd
 set showmode
+set paste
 
 "検索"
 set ignorecase
