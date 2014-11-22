@@ -4,24 +4,3 @@
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
-
-# User specific environment and startup programs
-tmux
-complete -C aws_completer aws
-export AWS_CONFIG_FILE=/root/.aws/aws.config
-export RBENV_ROOT="/usr/local/rbenv"
-export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims
-eval "$(rbenv init -)"
-
-# Alias
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
-alias ll="ls -la"
-alias j="jobs"
-alias h="history | tail"
-alias dstat='dstat -tlcmdrn'
-alias dstat-mem='dstat -tlcm'
-alias dstat-cpu='dstat -tlcr'
-alias dstat-net='dstat -tlcnd'
-alias dstat-disk='dstat -tlcdr'
