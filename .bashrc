@@ -10,8 +10,7 @@ tmux
 complete -C aws_completer aws
 export AWS_CONFIG_FILE=/root/.aws/aws.config
 export RBENV_ROOT="/usr/local/rbenv"
-export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/sh
-ims
+export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims
 eval "$(rbenv init -)"
 
 # Alias
