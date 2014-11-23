@@ -6,9 +6,7 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # User specific environment and startup programs
-if [ $SHLVL = 1 ]; then
-  tmux attach || tmux -f $HOME/.tmux.conf
-fi
+tmux
 complete -C aws_completer aws
 export AWS_CONFIG_FILE=/root/.aws/aws.config
 export RBENV_ROOT="/usr/local/rbenv"
