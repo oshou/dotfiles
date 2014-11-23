@@ -24,10 +24,11 @@ NeoBundle 'git://github.com/Shougo/vimproc.vim.git'
 NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
 
 "基本設定"
-set title
-set number
-set ruler
-set nolist
+set title           "編集ファイル名を表示"
+set number          "行番号表示"
+set ruler           "ルーラー表示"
+set list            "タブ、行末の不可視文字を表示"
+set showmatch       "閉じ括弧の入力時対応する括弧を表示"
 set wrap
 set laststatus=2
 set cmdheight=2
@@ -35,24 +36,33 @@ set showcmd
 set showmode
 set paste
 
-"検索"
-set ignorecase
-set smartcase
-set incsearch
-set hlsearch
-
-"編集"
+"インデント"
+set cindent
+set expandtab
+set smarttab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-set expandtab
+
+"ファイル操作"
+set encoding =UTF-8
+set hidden
+set autoread
+
+"検索"
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set wrapscan
+
+"編集"
 set autoindent
 set backspace=indent,eol,start
-set wrapscan
-set showmatch
 set wildmenu
 set formatoptions+=mM
 
+"バックアップ"
 set nobackup
 set noswapfile
 
@@ -60,14 +70,14 @@ set noswapfile
 syntax on
 filetype plugin indent on
 
-"NeoBundle nertdtree Setting"
+"NeoBundle Nertdtree Setting"
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
     autocmd VimEnter * execute 'NERDTree ./'
 endif
 
-"Vimshell Setting"
+"NeoBundle Vimshell Setting"
 let g:vimshell_interactive_update_time = 10
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
