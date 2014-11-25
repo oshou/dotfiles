@@ -1,6 +1,5 @@
-scriptencoding utf-8
-"viとの互換性を取らない"
-set nocompatible    "移動コマンドを使った時行頭へ移動しない"
+scriptencoding utf-8    "viとの互換性を取らない"
+set nocompatible        "移動コマンドを使った時行頭へ移動しない"
 
 if has('vim_starting')
     filetype plugin off

@@ -7,6 +7,9 @@
     branch = auto
     interactive = auto
     grep =auto
+    ui = auto
+[core]
+    editor = vim
 [alias]
 	co = checkout
     c  = commit -m
