@@ -1,6 +1,6 @@
 scriptencoding utf-8
 "viとの互換性を取らない"
-set nocompatible
+set nocompatible    "移動コマンドを使った時行頭へ移動しない"
 
 if has('vim_starting')
     filetype plugin off
@@ -27,14 +27,20 @@ NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
 set title           "編集ファイル名を表示"
 set number          "行番号表示"
 set ruler           "ルーラー表示"
-set list            "タブ、行末の不可視文字を表示"
+set nolist          "タブ、行末の不可視文字を非表示"
 set showmatch       "閉じ括弧の入力時対応する括弧を表示"
-set wrap
+set infercase       "補完の時大文字小文字を区別しない"
+set wrap            "ウィンドウ幅より長い行は折り返し"
 set laststatus=2
 set cmdheight=2
-set showcmd
+set showcmd         "コマンドを画面最下部に表示する"
 set showmode
 set paste
+set scrolloff=5     "スクロール時に下が見えるようにする"
+
+"エンコード"
+set encoding =UTF-8     "エンコード"
+set fileencoding=utf-8  "ファイルエンコード"
 
 "インデント"
 set cindent
@@ -45,20 +51,19 @@ set softtabstop=4
 set shiftwidth=4
 
 "ファイル操作"
-set encoding =UTF-8
 set hidden
 set autoread
 
 "検索"
-set incsearch
-set hlsearch
-set ignorecase
-set smartcase
+set incsearch       "インクリメンタルサーチ"
+set hlsearch        "検索結果をハイライト表示"
+set ignorecase      "検索時に小文字大文字区別無し"
+set smartcase       "但し大文字小文字混在の検索の場合は区別して検索"
 set wrapscan
 
 "編集"
 set autoindent
-set backspace=indent,eol,start
+set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
 set wildmenu
 set formatoptions+=mM
 
