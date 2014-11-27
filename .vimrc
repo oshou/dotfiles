@@ -34,7 +34,6 @@ set laststatus=2
 set cmdheight=2
 set showcmd         "コマンドを画面最下部に表示する"
 set showmode
-set paste
 set scrolloff=5     "スクロール時に下が見えるようにする"
 
 "エンコード"
@@ -42,12 +41,15 @@ set encoding =UTF-8     "エンコード"
 set fileencoding=utf-8  "ファイルエンコード"
 
 "インデント"
-set cindent
 set expandtab
 set smarttab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+set autoindent
+set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
+set wildmenu
+set formatoptions+=mM
 
 "ファイル操作"
 set hidden
@@ -59,12 +61,6 @@ set hlsearch        "検索結果をハイライト表示"
 set ignorecase      "検索時に小文字大文字区別無し"
 set smartcase       "但し大文字小文字混在の検索の場合は区別して検索"
 set wrapscan
-
-"編集"
-set autoindent
-set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
-set wildmenu
-set formatoptions+=mM
 
 "バックアップ"
 set nobackup
@@ -86,3 +82,4 @@ let g:vimshell_interactive_update_time = 10
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
 nnoremap <silent> vp :VimShellPop<CR>
+autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>  

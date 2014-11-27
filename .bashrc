@@ -19,6 +19,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias ll="ls -la"
 alias j="jobs"
+alias x="exit"
 alias h="history | tail"
 alias dstat='dstat -tlcmdrn'
 alias dstat-mem='dstat -tlcm'
