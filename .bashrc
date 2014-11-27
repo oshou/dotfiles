@@ -14,12 +14,14 @@ export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT
 eval "$(rbenv init -)"
 
 # Alias
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
+alias ls="ls -CF"
 alias ll="ls -la"
 alias j="jobs"
 alias x="exit"
+alias v="vim"
 alias h="history | tail"
 alias dstat='dstat -tlcmdrn'
 alias dstat-mem='dstat -tlcm'
