@@ -21,6 +21,8 @@ NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 NeoBundle 'git://github.com/Shougo/vimproc.vim.git'
 NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
+NeoBundle 'git://github.com/bbatsov/rubocop.git'
+NeoBundle 'git://github.com/Shougo/neosnippet.vim.git'
 
 "基本設定"
 set title           "編集ファイル名を表示"

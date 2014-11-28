@@ -10,7 +10,7 @@ tmux
 complete -C aws_completer aws
 export AWS_CONFIG_FILE=/root/.aws/aws.config
 export RBENV_ROOT="/usr/local/rbenv"
-export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims
+export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:/usr/libexec/git-core/
 eval "$(rbenv init -)"
 
 # Alias
@@ -23,6 +23,7 @@ alias j="jobs"
 alias x="exit"
 alias v="vim"
 alias h="history | tail"
+alias be="bundle exec"
 alias dstat='dstat -tlcmdrn'
 alias dstat-mem='dstat -tlcm'
 alias dstat-cpu='dstat -tlcr'

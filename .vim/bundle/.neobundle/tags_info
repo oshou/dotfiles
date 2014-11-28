@@ -1,7 +1,9 @@
 neoBundle.vim
 neobundle.vim
+neocomplete.vim
+neosnippet.vim
 nerdtree
+rubocop
 syntastic
-vim-ruby
 vimproc.vim
 vimshell.vim
