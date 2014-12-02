@@ -21,8 +21,7 @@ NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
 NeoBundle 'git://github.com/Shougo/vimproc.vim.git'
 NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
-NeoBundle 'git://github.com/bbatsov/rubocop.git'
-NeoBundle 'git://github.com/Shougo/neosnippet.vim.git'
+
 
 "基本設定"
 set title           "編集ファイル名を表示"
@@ -38,20 +37,12 @@ set showcmd         "コマンドを画面最下部に表示する"
 set showmode
 set scrolloff=5     "スクロール時に下が見えるようにする"
 
+"インデント"
+source ~/dotfiles/.vimrc_indent
+
 "エンコード"
 set encoding =UTF-8     "エンコード"
 set fileencoding=utf-8  "ファイルエンコード"
-
-"インデント"
-set expandtab
-set smarttab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set autoindent
-set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
-set wildmenu
-set formatoptions+=mM
 
 "ファイル操作"
 set hidden
@@ -72,14 +63,14 @@ set noswapfile
 syntax on
 filetype plugin indent on
 
-"NeoBundle Nertdtree Setting"
+"NeoBundle Setting/Nertdtree"
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
     autocmd VimEnter * execute 'NERDTree ./'
 endif
 
-"NeoBundle Vimshell Setting"
+"NeoBundle Setting/Vimshell"
 let g:vimshell_interactive_update_time = 10
 nnoremap <silent> vs :VimShell<CR>
 nnoremap <silent> vsc :VimShellCreate<CR>
