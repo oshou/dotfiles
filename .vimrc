@@ -41,8 +41,7 @@ set scrolloff=5     "スクロール時に下が見えるようにする"
 source ~/dotfiles/.vimrc_indent
 
 "エンコード"
-set encoding =UTF-8     "エンコード"
-set fileencoding=utf-8  "ファイルエンコード"
+source ~/dotfiles/.vimrc_encoding
 
 "ファイル操作"
 set hidden
