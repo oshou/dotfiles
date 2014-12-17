@@ -19,8 +19,8 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "その他プラグイン"
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/scrooloose/syntastic.git'
-NeoBundle 'git://github.com/Shougo/vimproc.vim.git'
-NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
+"NeoBundle 'git://github.com/Shougo/vimproc.vim.git'
+"NeoBundle 'git://github.com/Shougo/vimshell.vim.git'
 
 
 "基本設定"
