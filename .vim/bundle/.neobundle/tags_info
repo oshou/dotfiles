@@ -1,7 +1,6 @@
-errormarker.vim
+ctrlp.vim
 neoBundle.vim
 neobundle.vim
 nerdtree
 syntastic
-vimproc.vim
-vimshell.vim
+unite.vim
