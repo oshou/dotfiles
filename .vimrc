@@ -1,9 +1,8 @@
 filetype plugin off
 filetype indent off
 
-"#-----------------------------------------------------------------------
-"# bundle                                                           
-"#-----------------------------------------------------------------------
+"bundle
+"-----------------------------------------------------------------------
 if has('vim_starting')
   if &compatible
     set nocompatible
@@ -27,15 +26,15 @@ NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Shougo/unite.vim'
 
 
-"#-----------------------------------------------------------------------
-"# basic                                                           
-"#-----------------------------------------------------------------------
+"basic
+"-----------------------------------------------------------------------
 set number          "行番号表示"
 set nolist          "タブ、行末の不可視文字を非表示"
 set cursorline      "カーソル行をハイライト"
 set infercase       "補完の時大文字小文字を区別しない"
 set showmatch       "閉じ括弧の入力時対応する括弧を表示"
-augroup cch        
+set matchtime=1
+augroup cch
   autocmd!  cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
@@ -45,29 +44,28 @@ set wrap            "ウィンドウ幅より長い行は折り返し"
 set showmode
 set scrolloff=5     "スクロール時に下余白確保"
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
-set clipboard+=unnamed
+set clipboard+=unnamedplus,unnamed
 
-"#-----------------------------------------------------------------------
-"# status bar                                                            
-"#-----------------------------------------------------------------------
+"status bar
+"-----------------------------------------------------------------------
 set title           "編集ファイル名を表示"
 set ruler           "ルーラー表示"
-set wildmenu
-set showcmd         "コマンドを画面最下部に表示する"
+set wildmenu        "コマンドライン補完を強化"
+set showcmd         "入力中のコマンドを画面最下部に表示する"
 set linespace=0
 set laststatus=2    "最下ウィンドウにステータスを常に表示"
 set cmdheight=2     "コマンドライン用の画面行数"
 
 
-"#-----------------------------------------------------------------------
-"# indent                                                                
-"#-----------------------------------------------------------------------
+"indent
+"-----------------------------------------------------------------------
 set autoindent      "自動インデント"
 "set paste          "ペースト時にautoindentを無効にする
 set smartindent     "新しい行の開始位置を現在行と同じ場所にする
 set tabstop=2 shiftwidth=2 softtabstop=0
 set expandtab
 set smarttab
+set display=lastline
 set formatoptions+=mM
 
 if has("autocmd")
@@ -107,39 +105,50 @@ if has("autocmd")
 endif
 
 
-"#-----------------------------------------------------------------------
-"# encode                                                                
-"#-----------------------------------------------------------------------
+"encode
+"-----------------------------------------------------------------------
 scriptencoding utf-8    "viとの互換性を取らない"
 set encoding =UTF-8     "エンコード"
 set fileencoding=utf-8  "ファイルエンコード"
 
 
-"#-----------------------------------------------------------------------
-"# fileoperation                                                               
-"#-----------------------------------------------------------------------
+"operation
+"-----------------------------------------------------------------------
 set hidden
 set autoread
+set pastetoggle=
 
-"#-----------------------------------------------------------------------
-"# search                                                                
-"#-----------------------------------------------------------------------
-set wrapscan        "ファイル末尾まで進んだらファイル先頭に戻る"
+"search
+"-----------------------------------------------------------------------
 set incsearch       "インクリメンタルサーチ"
 set hlsearch        "検索結果をハイライト表示"
 set ignorecase      "検索時に小文字大文字の区別を無視する"
 set smartcase       "但し大文字小文字混在の検索の場合は区別して検索"
+set wrapscan        "ファイル末尾まで進んだらファイル先頭に戻る"
 
 
-"#-----------------------------------------------------------------------
-"# backup                                                                
-"#-----------------------------------------------------------------------
+"backup
+"-----------------------------------------------------------------------
 set nobackup
 set noswapfile
 
 
-"ファイル形式検出、プラグイン、インデントをON"
+"misc
+"-----------------------------------------------------------------------
+nnoremap + <C-a>
+nnoremap - <C-x>
+nnoremap Y y$
+"自動補完"
+imap { {}<Left>
+imap [ []<Left>
+imap ( ()<Left>
+
+autocmd BufWritePre * :%s/\s\+$//e
+
+
+"syntax color
 syntax on
+highlight LineNr ctermfg=darkgrey
 filetype plugin indent on
 
 "NeoBundle Setting/Nertdtree"
@@ -148,10 +157,3 @@ let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
     autocmd VimEnter * execute 'NERDTree ./'
 endif
-
-"NeoBundle Setting/Vimshell"
-"let g:vimshell_interactive_update_time = 10
-"nnoremap <silent> vs :VimShell<CR>
-"nnoremap <silent> vsc :VimShellCreate<CR>
-"nnoremap <silent> vp :VimShellPop<CR>
-"autocmd FileType html inoremap <silent> <buffer> </ </<C-x><C-o>  
