@@ -148,11 +148,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 
 "syntax color
+"-----------------------------------------------------------------------
 syntax on
 highlight LineNr ctermfg=darkgrey
 filetype plugin indent on
 
+
 "NeoBundle Setting/Nertdtree"
+"-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
