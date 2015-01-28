@@ -46,6 +46,7 @@ set scrolloff=5     "スクロール時に下余白確保"
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
 set clipboard+=unnamedplus,unnamed
 
+
 "status bar
 "-----------------------------------------------------------------------
 set title           "編集ファイル名を表示"
@@ -119,6 +120,7 @@ set autoread
 set pastetoggle=
 set mouse=a
 
+
 "search
 "-----------------------------------------------------------------------
 set incsearch       "インクリメンタルサーチ"
@@ -134,16 +136,17 @@ set nobackup
 set noswapfile
 set confirm
 
+
 "misc
 "-----------------------------------------------------------------------
 nnoremap + <C-a>
 nnoremap - <C-x>
 nnoremap Y y$
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
 "自動補完"
 imap { {}<Left>
 imap [ []<Left>
 imap ( ()<Left>
-
 autocmd BufWritePre * :%s/\s\+$//e
 
 

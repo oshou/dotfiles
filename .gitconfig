@@ -11,7 +11,7 @@
 [core]
     editor = vim
 [alias]
-	co = checkout
+  	co = checkout
     c  = commit -m
     ca = commit -am
     p  = push
