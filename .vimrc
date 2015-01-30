@@ -22,7 +22,8 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "その他プラグイン"
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/unite.vim'
 
 
