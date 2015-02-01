@@ -3,30 +3,16 @@ filetype indent off
 
 "bundle
 "-----------------------------------------------------------------------
-if has('vim_starting')
-  if &compatible
-    set nocompatible
+if 1
+  set nocompatible
+  if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
   endif
-
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  filetype plugin indent on
+  NeoBundleCheck
 endif
-
-"プラグインインストールディレクトリを指定"
-call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
-NeoBundleFetch 'Shougo/neoBundle.vim'
-call neobundle#end()
-
-"Neobundle自体を管理"
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-
-"その他プラグイン"
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'kana/vim-smartchr'
-
 
 "basic
 "-----------------------------------------------------------------------
