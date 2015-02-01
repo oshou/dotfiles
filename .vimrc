@@ -159,6 +159,7 @@ imap [] []<Left>
 imap () ()<Left>
 imap '' ''<Left>
 imap "" ""<Left>
+imap || ||<Left>
 inoremap <expr> = smartchr#one_of(' = ',' == ',' === ','=')
 autocmd BufWritePre * :%s/\s\+$//e
 
