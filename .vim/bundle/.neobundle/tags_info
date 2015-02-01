@@ -1,6 +1,8 @@
-ctrlp.vim
 neoBundle.vim
 neobundle.vim
 nerdtree
 syntastic
 unite.vim
+vim-smartchr
+vimproc.vim
+vimshell.vim

@@ -25,6 +25,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'kana/vim-smartchr'
 
 
 "basic
@@ -122,6 +123,14 @@ set pastetoggle=
 set mouse=a
 
 
+"Window
+"-----------------------------------------------------------------------
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+
 "search
 "-----------------------------------------------------------------------
 set incsearch       "インクリメンタルサーチ"
@@ -145,9 +154,12 @@ nnoremap - <C-x>
 nnoremap Y y$
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 "自動補完"
-imap { {}<Left>
-imap [ []<Left>
-imap ( ()<Left>
+imap {} {}<Left>
+imap [] []<Left>
+imap () ()<Left>
+imap '' ''<Left>
+imap "" ""<Left>
+inoremap <expr> = smartchr#one_of(' = ',' == ',' === ','=')
 autocmd BufWritePre * :%s/\s\+$//e
 
 
