@@ -7,4 +7,5 @@ do
     ln -sf $HOME/dotfiles/$file $HOME/$file
     echo "make link $HOME/dotfiles/$file -> $HOME/$file"
 done
+
 echo "setup is done!"

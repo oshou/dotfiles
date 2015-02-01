@@ -27,6 +27,7 @@ alias h="history | tail"
 alias be="bundle exec"
 alias rc="rails console"
 alias rcs="rails console --sandbox"
+alias rs="rails s -b 0.0.0.0"
 alias dstat='dstat -tlcmdrn'
 alias dstat-mem='dstat -tlcm'
 alias dstat-cpu='dstat -tlcr'
