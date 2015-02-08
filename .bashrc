@@ -8,6 +8,7 @@ fi
 # User specific environment and startup programs
 tmux
 complete -C aws_completer aws
+export EDITOR="/usr/local/bin/vim"
 export AWS_CONFIG_FILE=/root/.aws/aws.config
 export RBENV_ROOT="/usr/local/rbenv"
 export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:/usr/libexec/git-core/
