@@ -1,9 +1,7 @@
 #! /bin/sh
 # github auto-push script
 
-echo "a"
 git add .
-echo "b"
-read -p "Commit Message: " commit-message
-git commit -am 'commit-message'
+read -p "Commit Message: " commitmessage
+git commit -am "${commitmessage}"
 git push origin master
