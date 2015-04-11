@@ -32,7 +32,7 @@ set wrap            "ウィンドウ幅より長い行は折り返し"
 set showmode
 set scrolloff=5     "スクロール時に下余白確保"
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
-set clipboard+=unnamedplus,unnamed
+set clipboard+=unnamed,autoselect
 
 
 "status bar
@@ -111,10 +111,13 @@ set mouse=a
 
 "Window
 "-----------------------------------------------------------------------
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+nnoremap J <c-w>j
+nnoremap K <c-w>k
+nnoremap H <c-w>h
+nnoremap L <c-w>l
+nnoremap > <c-w>>
+nnoremap < <c-w><
+
 
 
 "search
