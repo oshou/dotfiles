@@ -3,26 +3,16 @@ filetype indent off
 
 "bundle
 "-----------------------------------------------------------------------
-if has('vim_starting')
+if 1
   set nocompatible
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim
+  if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+  endif
+  call neobundle#rc(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  filetype plugin indent on
+  NeoBundleCheck
 endif
-
-"プラグインインストールディレクトリを指定"
-call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
-NeoBundleFetch 'Shougo/neoBundle.vim'
-call neobundle#end()
-
-"Neobundle自体を管理"
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-
-"その他プラグイン"
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'kana/vim-smartchr'
-
 
 "basic
 "-----------------------------------------------------------------------
@@ -82,11 +72,10 @@ if has("autocmd")
   autocmd FileType cs         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType eruby      setlocal sw=1 sts=1 ts=1 et
-  autocmd FileType html       setlocal sw=1 sts=1 ts=1 et
+  autocmd FileType eruby      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
   autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
@@ -126,8 +115,8 @@ nnoremap J <c-w>j
 nnoremap K <c-w>k
 nnoremap H <c-w>h
 nnoremap L <c-w>l
-nnoremap < <c-w>>
-nnoremap > <c-w><
+nnoremap > <c-w>>
+nnoremap < <c-w><
 
 
 
@@ -159,11 +148,9 @@ imap [] []<Left>
 imap () ()<Left>
 imap '' ''<Left>
 imap "" ""<Left>
-imap \|\| \|\|<Left>
-inoremap <expr> = smartchr#one_of(' = ','=',' == ',' === ')
-inoremap <expr> # smartchr#one_of('# ','#')
+imap || ||<Left>
+inoremap <expr> = smartchr#one_of(' = ',' == ',' === ','=')
 autocmd BufWritePre * :%s/\s\+$//e
-au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 
 "syntax color
@@ -178,12 +165,5 @@ filetype plugin indent on
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
-  autocmd VimEnter * execute 'NERDTree ./'
+    autocmd VimEnter * execute 'NERDTree ./'
 endif
-
-"NeoBundle Setting/html5vim"
-"-----------------------------------------------------------------------
-"let g:html5_event_handler_attributes_complete = 1
-"let g:html5_rdfa_attributes_complete = 1
-"let g:html5_microdata_attributes_complete = 1
-"let g:html5_aria_attributes_complete = 1
