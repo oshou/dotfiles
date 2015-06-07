@@ -19,6 +19,7 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "その他プラグイン"
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kana/vim-smartchr'
@@ -92,7 +93,7 @@ if has("autocmd")
   autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType vb         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et

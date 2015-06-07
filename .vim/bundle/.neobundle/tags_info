@@ -1,3 +1,4 @@
+ctrlp.vim
 neoBundle.vim
 neobundle.vim
 nerdtree
@@ -5,5 +6,3 @@ syntastic
 unite.vim
 vim-coffee-script
 vim-smartchr
-vimproc.vim
-vimshell.vim
