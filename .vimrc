@@ -19,7 +19,6 @@ NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
 "その他プラグイン"
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kana/vim-smartchr'
@@ -129,6 +128,11 @@ nnoremap H <c-w>h
 nnoremap L <c-w>l
 nnoremap < <c-w>>
 nnoremap > <c-w><
+map <C-g> :Gtags
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
 
 
 
