@@ -22,6 +22,7 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'kana/vim-smartchr'
+NeoBundle 'othree/html5.vim'
 
 
 "basic
@@ -82,8 +83,8 @@ if has("autocmd")
   autocmd FileType cs         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType eruby      setlocal sw=1 sts=1 ts=1 et
-  autocmd FileType html       setlocal sw=1 sts=1 ts=1 et
+  autocmd FileType eruby      setlocal sw=2 sts=2 ts=1 et
+  autocmd FileType html       setlocal sw=2 sts=2 ts= et
   autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
   autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
@@ -188,7 +189,7 @@ endif
 
 "NeoBundle Setting/html5vim"
 "-----------------------------------------------------------------------
-"let g:html5_event_handler_attributes_complete = 1
-"let g:html5_rdfa_attributes_complete = 1
-"let g:html5_microdata_attributes_complete = 1
-"let g:html5_aria_attributes_complete = 1
+let g:html5_event_handler_attributes_complete = 1
+let g:html5_rdfa_attributes_complete = 1
+let g:html5_microdata_attributes_complete = 1
+let g:html5_aria_attributes_complete = 1
