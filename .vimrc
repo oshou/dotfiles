@@ -1,29 +1,19 @@
-filetype plugin off
-filetype indent off
+"vi compatible unset
+set nocompatible
+filetype off
 
-"bundle
-"-----------------------------------------------------------------------
 if has('vim_starting')
-  set nocompatible
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundle 'Shougo/neobundle.vim'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'scrooloose/syntastic'
+  NeoBundle 'kchmck/vim-coffee-script'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'kana/vim-smartchr'
+  NeoBundle 'othree/html5.vim'
+  call neobundle#end()
 endif
-
-"プラグインインストールディレクトリを指定"
-call neobundle#begin(expand('~/dotfiles/.vim/bundle'))
-NeoBundleFetch 'Shougo/neoBundle.vim'
-call neobundle#end()
-
-"Neobundle自体を管理"
-NeoBundle 'git://github.com/Shougo/neobundle.vim.git'
-
-"その他プラグイン"
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'kana/vim-smartchr'
-NeoBundle 'othree/html5.vim'
-
 
 "basic
 "-----------------------------------------------------------------------
@@ -85,7 +75,7 @@ if has("autocmd")
   autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType eruby      setlocal sw=2 sts=2 ts=1 et
   autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType java       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
   autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
   autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et

@@ -8,4 +8,4 @@ do
     echo "make link $HOME/dotfiles/$file -> $HOME/$file"
 done
 
-echo "setup is done!"
+echo "setup is complete!"

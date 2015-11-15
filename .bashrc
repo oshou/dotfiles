@@ -15,6 +15,14 @@ export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT
 eval "$(rbenv init -)"
 
 # Setting Base
+alias ~="cd ~"
+alias .="cd .."
+alias ..="cd ../.."
+alias ...="cd ../../.."
+alias rm="rm -i"
+alias rm="rm -i"
+alias rm="rm -i"
+alias rm="rm -i"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
@@ -28,6 +36,9 @@ alias v="vim"
 alias j="jobs"
 alias h="history | tail"
 alias x="exit"
+alias bashrc="v ^/.bashrc"
+alias vimrc="v ^/.vimrc"
+alias reload="source ^/.bashrc && source ^/.vimrc"
 alias dstat='dstat -tlpcmsdrn'
 alias dstat-mem='dstat -tlcmsp'
 alias dstat-cpu='dstat -tlcrsp'
