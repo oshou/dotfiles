@@ -3,16 +3,16 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundle 'Shougo/neobundle.vim'
-  NeoBundle 'scrooloose/nerdtree'
-  NeoBundle 'scrooloose/syntastic'
-  NeoBundle 'kchmck/vim-coffee-script'
-  NeoBundle 'Shougo/unite.vim'
-  NeoBundle 'kana/vim-smartchr'
-  NeoBundle 'othree/html5.vim'
-  call neobundle#end()
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+  Plugin 'gmarik/Vundle.vim'
+  Plugin 'scrooloose/nerdtree'
+  Plugin 'scrooloose/syntastic'
+  Plugin 'kchmck/vim-coffee-script'
+  Plugin 'Shougo/unite.vim'
+  Plugin 'kana/vim-smartchr'
+  Plugin 'othree/html5.vim'
+  call vundle#end()
 endif
 
 "basic
