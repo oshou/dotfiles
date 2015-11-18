@@ -14,6 +14,12 @@ export RBENV_ROOT="/usr/local/rbenv"
 export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:/usr/libexec/git-core/
 eval "$(rbenv init -)"
 
+# Exports
+export APACHE_ROOT="/etc/httpd"
+export DOC_ROOT="/var/www/html"
+export SRC_ROOT="/usr/local/src"
+export WEBAPPS_ROOT="/usr/local/src"
+
 # Setting Base
 alias ~="cd ~"
 alias .="cd .."
