@@ -1,19 +1,21 @@
-"vi compatible unset
+"Compatible setting
 set nocompatible
 filetype off
 
-if has('vim_starting')
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-  Plugin 'gmarik/Vundle.vim'
-  Plugin 'scrooloose/nerdtree'
-  Plugin 'scrooloose/syntastic'
-  Plugin 'kchmck/vim-coffee-script'
-  Plugin 'Shougo/unite.vim'
-  Plugin 'kana/vim-smartchr'
-  Plugin 'othree/html5.vim'
-  call vundle#end()
-endif
+"Environment Setting
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'Shougo/unite.vim'
+Plugin 'kana/vim-smartchr'
+Plugin 'othree/html5.vim'
+call vundle#end()
+
+filetype plugin indent on
 
 "basic
 "-----------------------------------------------------------------------
