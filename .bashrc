@@ -4,23 +4,18 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-
-# User specific environment and startup programs
 tmux
-complete -C aws_completer aws
-export EDITOR="/usr/local/bin/vim"
-export AWS_CONFIG_FILE=/root/.aws/aws.config
-export RBENV_ROOT="/usr/local/rbenv"
-export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims:/usr/libexec/git-core/
-eval "$(rbenv init -)"
 
 # Exports
+export EDITOR="/usr/local/bin/vim"
+export AWS_CONFIG_FILE=/root/.aws/aws.config
+export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:/usr/libexec/git-core/
 export APACHE_ROOT="/etc/httpd"
 export DOC_ROOT="/var/www/html"
 export SRC_ROOT="/usr/local/src"
-export WEBAPPS_ROOT="/usr/local/src"
+export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
 
-# Setting Base
+# Aliases
 alias ~="cd ~"
 alias .="cd .."
 alias ..="cd ../.."
@@ -49,11 +44,17 @@ alias dstat-cpu='dstat -tlcrsp'
 alias dstat-net='dstat -tlcndsp'
 alias dstat-disk='dstat -tlcdrsp'
 
+# AWS Setting
+complete -C aws_completer aws
+
 # Setting Rails
+export RBENV_ROOT="/usr/local/rbenv"
+export PATH=$PATH:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims
 alias be="bundle exec"
 alias rc="rails console"
 alias rcs="rails console --sandbox"
 alias rs="rails s -b 0.0.0.0"
+eval "$(rbenv init -)"
 
 # Setting Node.js
 if [[ -s ~/.nvm/nvm.sh ]];
@@ -63,3 +64,4 @@ fi
 # Setting Java
 export JAVA_HOME=/usr/local/java
 export CATALINA_HOME=/usr/local/tomcat
+export PATH=$PATH:${JAVA_HOME}/bin
