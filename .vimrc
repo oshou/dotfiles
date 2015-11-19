@@ -17,7 +17,7 @@ call vundle#end()
 
 filetype plugin indent on
 
-"basic
+"Basic
 "-----------------------------------------------------------------------
 set number          "行番号表示"
 set nolist          "タブ、行末の不可視文字を非表示"
@@ -38,7 +38,7 @@ set backspace=indent,eol,start  "バックスペースで各種消せるよう�
 set clipboard+=unnamed,autoselect
 
 
-"status bar
+"Status bar
 "-----------------------------------------------------------------------
 set title           "編集ファイル名を表示"
 set ruler           "ルーラー表示"
@@ -49,7 +49,7 @@ set laststatus=2    "最下ウィンドウにステータスを常に表示"
 set cmdheight=2     "コマンドライン用の画面行数"
 
 
-"indent
+"Indent
 "-----------------------------------------------------------------------
 set autoindent      "自動インデント"
 "set paste          "ペースト時にautoindentを無効にする
@@ -98,14 +98,14 @@ if has("autocmd")
 endif
 
 
-"encode
+"Encode
 "-----------------------------------------------------------------------
 scriptencoding utf-8    "viとの互換性を取らない"
 set encoding =UTF-8     "エンコード"
 set fileencoding=utf-8  "ファイルエンコード"
 
 
-"operation
+"Operation
 "-----------------------------------------------------------------------
 set hidden
 set autoread
@@ -129,7 +129,7 @@ map <C-p> :cp<CR>
 
 
 
-"search
+"Search
 "-----------------------------------------------------------------------
 set incsearch       "インクリメンタルサーチ"
 set hlsearch        "検索結果をハイライト表示"
@@ -138,14 +138,14 @@ set smartcase       "但し大文字小文字混在の検索の場合は区別�
 set wrapscan        "ファイル末尾まで進んだらファイル先頭に戻る"
 
 
-"backup
+"Backup
 "-----------------------------------------------------------------------
 set nobackup
 set noswapfile
 set confirm
 
 
-"misc
+"Misc
 "-----------------------------------------------------------------------
 nnoremap + <C-a>
 nnoremap - <C-x>
@@ -164,14 +164,14 @@ autocmd BufWritePre * :%s/\s\+$//e
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 
-"syntax color
+"Syntax color
 "-----------------------------------------------------------------------
 syntax on
 highlight LineNr ctermfg=darkgrey
 filetype plugin indent on
 
 
-"NeoBundle Setting/Nertdtree"
+"Bundle Setting/Nertdtree"
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
@@ -179,7 +179,7 @@ if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
 
-"NeoBundle Setting/html5vim"
+"Bundle Setting/html5vim"
 "-----------------------------------------------------------------------
 let g:html5_event_handler_attributes_complete = 1
 let g:html5_rdfa_attributes_complete = 1
