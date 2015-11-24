@@ -8,6 +8,7 @@ tmux
 
 # Exports
 export EDITOR="/usr/local/bin/vim"
+export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
 export AWS_CONFIG_FILE=/root/.aws/aws.config
 export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:/usr/libexec/git-core/
 export APACHE_ROOT="/etc/httpd"
@@ -51,6 +52,7 @@ alias ll="ls -la"
 alias llg="ls -la | grep"
 alias pa="ps aux | less"
 alias pag="ps aux | grep"
+alias envg="env | grep"
 alias nts="netstat -pantu"
 alias v="vim"
 alias alog="cd $APACHE_ROOT/logs/ && vim"
