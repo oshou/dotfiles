@@ -10,12 +10,12 @@ tmux
 export EDITOR="/usr/local/bin/vim"
 export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
 export PATH=$PATH:$HOME/bin:/root/.rbenv/shims
-# export APACHE_ROOT="/etc/httpd"
 export NGINX_ROOT="/etc/nginx"
 export DOC_ROOT="/var/www/html"
 export SRC_ROOT="/usr/local/src"
 export SRC_RUBY="/usr/local/src/ruby"
-# export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
+export APACHE_ROOT="/etc/httpd"
+export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
 
 # AWS Setting
 complete -C aws_completer aws
@@ -30,9 +30,9 @@ if [[ -s ~/.nvm/nvm.sh ]];
 fi
 
 # Setting Java
-# export JAVA_HOME=/usr/local/java
-# export TOMCAT_ROOT=/usr/local/tomcat
-# export PATH=$PATH:${JAVA_HOME}/bin
+export JAVA_HOME=/usr/local/java
+export TOMCAT_ROOT=/usr/local/tomcat
+export PATH=$PATH:${JAVA_HOME}/bin
 
 # Aliases
 alias ~="cd ~"
