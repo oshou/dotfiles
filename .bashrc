@@ -9,23 +9,19 @@ tmux
 # Exports
 export EDITOR="/usr/local/bin/vim"
 export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
-export AWS_CONFIG_FILE=/root/.aws/aws.config
-export PATH=$PATH:$HOME/bin:/usr/local/heroku/bin:/usr/libexec/git-core/
-export APACHE_ROOT="/etc/httpd"
+export PATH=$PATH:$HOME/bin:/root/.rbenv/shims
+# export APACHE_ROOT="/etc/httpd"
+export NGINX_ROOT="/etc/nginx"
 export DOC_ROOT="/var/www/html"
 export SRC_ROOT="/usr/local/src"
-export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
+export SRC_RUBY="/usr/local/src/ruby"
+# export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
 
 # AWS Setting
 complete -C aws_completer aws
 
-# Setting Rails
-export RBENV_ROOT="/usr/local/rbenv"
-export PATH=$PATH:${RBENV_ROOT}/bin:${RBENV_ROOT}/shims
-alias be="bundle exec"
-alias rc="rails console"
-alias rcs="rails console --sandbox"
-alias rs="rails s -b 0.0.0.0"
+# Setting Ruby
+export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # Setting Node.js
@@ -34,9 +30,9 @@ if [[ -s ~/.nvm/nvm.sh ]];
 fi
 
 # Setting Java
-export JAVA_HOME=/usr/local/java
-export TOMCAT_ROOT=/usr/local/tomcat
-export PATH=$PATH:${JAVA_HOME}/bin
+# export JAVA_HOME=/usr/local/java
+# export TOMCAT_ROOT=/usr/local/tomcat
+# export PATH=$PATH:${JAVA_HOME}/bin
 
 # Aliases
 alias ~="cd ~"
@@ -55,15 +51,17 @@ alias pag="ps aux | grep"
 alias envg="env | grep"
 alias nts="netstat -pantu"
 alias v="vim"
-alias alog="cd $APACHE_ROOT/logs/ && vim"
-alias tlog="cd $TOMCAT_ROOT/logs/ && vim"
+alias nlog="vim /var/log/nginx/ "
+alias ulog="vim /var/log/unicorn/"
 alias j="jobs"
 alias h="history | tail"
 alias x="exit"
 alias grep="grep --color=auto"
 alias bashrc="v ~/.bashrc"
 alias vimrc="v ~/.vimrc"
+alias ngxconf="vim /etc/nginx"
 alias reload="source ~/.bashrc && source ~/.vimrc"
+alias be="bundle exec"
 alias dstat='dstat -tlpcmsdrn'
 alias dstat-mem='dstat -tlcmsp'
 alias dstat-cpu='dstat -tlcrsp'

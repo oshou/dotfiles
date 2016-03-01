@@ -128,7 +128,6 @@ map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
 
-
 "Search
 "-----------------------------------------------------------------------
 set incsearch       "インクリメンタルサーチ"
@@ -150,6 +149,7 @@ set confirm
 nnoremap + <C-a>
 nnoremap - <C-x>
 nnoremap Y y$
+nnoremap <S-Tab> <<
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
 "自動補完"
 imap {} {}<Left>
@@ -160,6 +160,7 @@ imap "" ""<Left>
 imap \|\| \|\|<Left>
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
 inoremap <expr> # smartchr#one_of('# ','#')
+inoremap <S-Tab> <C-d>
 autocmd BufWritePre * :%s/\s\+$//e
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
