@@ -20,7 +20,8 @@ else
 fi
 
 cd ~/.dotfiles
-if [ $? -ne 0 ];then
+
+if [ $? -ne 0 ]; then
   die "not found: $DOTPATH"
 fi
 
