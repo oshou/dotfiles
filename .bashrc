@@ -9,7 +9,7 @@ tmux
 # Exports
 export EDITOR="/usr/local/bin/vim"
 export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
-export PATH=$PATH:$HOME/bin:/root/.rbenv/shims
+export PATH=$PATH:$HOME/bin:/root/.rbenv/shims:/usr/local/nginx/sbin
 export NGINX_ROOT="/etc/nginx"
 export DOC_ROOT="/var/www/html"
 export SRC_ROOT="/usr/local/src"
@@ -51,7 +51,8 @@ alias pag="ps aux | grep"
 alias envg="env | grep"
 alias nts="netstat -pantu"
 alias v="vim"
-alias nlog="vim /var/log/nginx/ "
+alias log="vim /var/log/"
+alias nlog="vim /var/log/nginx/"
 alias ulog="vim /var/log/unicorn/"
 alias j="jobs"
 alias h="history | tail"
