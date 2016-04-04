@@ -13,6 +13,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'Shougo/unite.vim'
 Plugin 'kana/vim-smartchr'
 Plugin 'othree/html5.vim'
+Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
 
 filetype plugin indent on
@@ -93,8 +94,6 @@ if has("autocmd")
   autocmd FileType xhtml      setlocal sw=4 sts=4 ts=4 et
   autocmd FileType xml        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType bash       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
 endif

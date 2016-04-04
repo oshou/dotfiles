@@ -23,6 +23,8 @@ complete -C aws_completer aws
 # Setting Ruby
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
+alias be="bundle exec"
+alias bepr="bundle exec pry-remote"
 
 # Setting Node.js
 if [[ -s ~/.nvm/nvm.sh ]];
@@ -60,7 +62,7 @@ alias x="exit"
 alias grep="grep --color=auto"
 alias bashrc="v ~/.bashrc"
 alias vimrc="v ~/.vimrc"
-alias ngxconf="vim /usr/local/nginx/conf"
+alias ngxconf="vim /etc/nginx"
 alias reload="source ~/.bashrc && source ~/.vimrc"
 alias be="bundle exec"
 alias dstat='dstat -tlpcmsdrn'
