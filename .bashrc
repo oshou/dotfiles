@@ -10,10 +10,13 @@ tmux
 export EDITOR="/usr/local/bin/vim"
 export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
 export PATH=$PATH:$HOME/bin:/root/.rbenv/shims:/usr/local/nginx/sbin
+
 export NGINX_ROOT="/usr/local/nginx"
 export DOC_ROOT="/var/www/html"
 export SRC_ROOT="/usr/local/src"
 export SRC_RUBY="/usr/local/src/ruby"
+export SRC_PHP="/usr/local/src/php"
+export SRC_SYS="/usr/local/src/sysprog"
 export APACHE_ROOT="/etc/httpd"
 export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
 
