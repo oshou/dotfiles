@@ -29,6 +29,9 @@ eval "$(rbenv init -)"
 alias be="bundle exec"
 alias bepr="bundle exec pry-remote"
 
+# Setting PHP
+export PATH=/usr/local/boris/bin:$PATH
+
 # Setting Node.js
 if [[ -s ~/.nvm/nvm.sh ]];
   then source ~/.nvm/nvm.sh
