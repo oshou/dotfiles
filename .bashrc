@@ -17,6 +17,8 @@ export SRC_ROOT="/usr/local/src"
 export SRC_RUBY="/usr/local/src/ruby"
 export SRC_PHP="/usr/local/src/php"
 export SRC_SYS="/usr/local/src/sysprog"
+export SRC_PROV="/usr/local/src/provisioning"
+export SRC_SYSOPE="/usr/local/src/sysope"
 export APACHE_ROOT="/etc/httpd"
 export WEBAPPS_ROOT="/usr/local/tomcat/webapps"
 
