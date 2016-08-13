@@ -72,7 +72,6 @@ alias bashrc="v ~/.bashrc"
 alias vimrc="v ~/.vimrc"
 alias ngxconf="vim /etc/nginx"
 alias reload="source ~/.bashrc && source ~/.vimrc"
-alias be="bundle exec"
 alias dstat-full='dstat -tlcmsdrn'
 alias dstat-cpu='dstat -tlcr'
 alias dstat-mem='dstat -tlcms'
