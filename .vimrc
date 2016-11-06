@@ -9,10 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'Shougo/unite.vim'
 Plugin 'kana/vim-smartchr'
-Plugin 'othree/html5.vim'
 Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
 
