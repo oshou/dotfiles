@@ -9,12 +9,16 @@ tmux
 # Exports
 export EDITOR="/usr/local/bin/vim"
 export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
-export PATH=$PATH:$HOME/bin
+export HISTSIZE=10000
 
 # Aliases
 alias ~="cd ~"
 alias .="cd .."
 alias ..="cd ../.."
+alias v="vim"
+alias h="history | tail"
+alias j="jobs"
+alias grep="grep --color=auto"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
@@ -26,14 +30,9 @@ alias pa="ps aux | less"
 alias pag="ps aux | grep"
 alias envg="env | grep"
 alias nts="netstat -pantu"
-alias v="vim"
-alias j="jobs"
-alias h="history | tail"
 alias x="exit"
-alias log="vim /var/log/"
-alias grep="grep --color=auto"
-alias bashrc="v ~/.bashrc"
-alias vimrc="v ~/.vimrc"
+alias bashrc="vi ~/.bashrc"
+alias vimrc="vi ~/.vimrc"
 alias dstat-full='dstat -tlcmsdrn'
 alias dstat-cpu='dstat -tlcr'
 alias dstat-mem='dstat -tlcms'
