@@ -21,5 +21,5 @@ source $HOME/.bashrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Download Message Bundles
-echo "Please open Vim && do BundleInstall"
 echo "setup is complete!"
+echo "***** Please open Vim && do BundleInstall *****"
