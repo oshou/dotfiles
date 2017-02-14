@@ -7,10 +7,10 @@ fi
 tmux
 
 # Exports
-export EDITOR="/usr/local/bin/vim"
 export PS1="\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]"
 export HISTSIZE=10000
 export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
+export EDITOR="/usr/local/bin/vim"
 
 # Aliases
 alias ~="cd ~"
