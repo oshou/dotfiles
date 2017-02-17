@@ -8,7 +8,7 @@ tmux
 
 # Exports
 export PS1='\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]'
-export HISTSIZE=10000
+export HISTSIZE=100000
 export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
 export EDITOR="/usr/local/bin/vim"
 

@@ -5,7 +5,7 @@ sudo yum -y install tmux
 
 DOT_FILES=(.bash_logout .bash_profile .bashrc .gitignore .tmux.conf .vimrc)
 
-# Download Vundle.vim
+# Set dotfiles symbolic link
 for file in ${DOT_FILES[@]}
 do
   if [ -e $HOME/$file ];
