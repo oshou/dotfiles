@@ -145,8 +145,6 @@ nnoremap J <c-w>j
 nnoremap K <c-w>k
 nnoremap H <c-w>h
 nnoremap L <c-w>l
-nnoremap < <c-w>>
-nnoremap > <c-w><
 map <C-g> :Gtags
 map <C-h> :Gtags -f %<CR>
 map <C-j> :GtagsCursor<CR>
