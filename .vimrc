@@ -1,8 +1,11 @@
 "Compatible setting
+"-----------------------------------------------------------------------
 set nocompatible
 filetype off
 
-"Environment Setting
+
+"Plugin
+"-----------------------------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -15,6 +18,7 @@ Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
 
 filetype plugin indent on
+
 
 "Basic
 "-----------------------------------------------------------------------
@@ -104,12 +108,35 @@ set encoding =UTF-8     "エンコード"
 set fileencoding=utf-8  "ファイルエンコード"
 
 
+"Syntax color
+"-----------------------------------------------------------------------
+syntax on
+highlight LineNr ctermfg=darkgrey
+filetype plugin indent on
+
+
+"Backup
+"-----------------------------------------------------------------------
+set nobackup
+set noswapfile
+set confirm
+
+
 "Operation
 "-----------------------------------------------------------------------
 set hidden
 set autoread
 set pastetoggle=
 set mouse=a
+
+
+"Search
+"-----------------------------------------------------------------------
+set incsearch       "インクリメンタルサーチ"
+set hlsearch        "検索結果をハイライト表示"
+set ignorecase      "検索時に小文字大文字の区別を無視する"
+set smartcase       "但し大文字小文字混在の検索の場合は区別して検索"
+set wrapscan        "ファイル末尾まで進んだらファイル先頭に戻る"
 
 
 "Window
@@ -127,22 +154,6 @@ map <C-n> :cn<CR>
 map <C-p> :cp<CR>
 
 
-"Search
-"-----------------------------------------------------------------------
-set incsearch       "インクリメンタルサーチ"
-set hlsearch        "検索結果をハイライト表示"
-set ignorecase      "検索時に小文字大文字の区別を無視する"
-set smartcase       "但し大文字小文字混在の検索の場合は区別して検索"
-set wrapscan        "ファイル末尾まで進んだらファイル先頭に戻る"
-
-
-"Backup
-"-----------------------------------------------------------------------
-set nobackup
-set noswapfile
-set confirm
-
-
 "Misc
 "-----------------------------------------------------------------------
 nnoremap + <C-a>
@@ -150,7 +161,10 @@ nnoremap - <C-x>
 nnoremap Y y$
 nnoremap <S-Tab> <<
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
-"自動補完"
+
+
+"Autocomplete
+"-----------------------------------------------------------------------
 imap {} {}<Left>
 imap [] []<Left>
 imap () ()<Left>
@@ -164,13 +178,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 
-"Syntax color
-"-----------------------------------------------------------------------
-syntax on
-highlight LineNr ctermfg=darkgrey
-filetype plugin indent on
-
-
 "Bundle Setting/Nertdtree"
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
@@ -178,10 +185,3 @@ let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
-
-"Bundle Setting/html5vim"
-"-----------------------------------------------------------------------
-let g:html5_event_handler_attributes_complete = 1
-let g:html5_rdfa_attributes_complete = 1
-let g:html5_microdata_attributes_complete = 1
-let g:html5_aria_attributes_complete = 1
