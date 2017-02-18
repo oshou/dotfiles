@@ -1,16 +1,15 @@
 #!/bin/bash
 
-# Install tmux
-sudo yum -y install tmux
-
-DOT_FILES=(.bash_logout .bash_profile .bashrc .gitignore .tmux.conf .vimrc)
+DOT_FILES=(.bash_logout .bash_profile .bashrc .tmux.conf .vimrc)
 
 # Set dotfiles symbolic link
+mkdir -p $HOME/dotfiles_bak
 for file in ${DOT_FILES[@]}
 do
   if [ -e $HOME/$file ];
   then
-    cp $HOME/$file $HOME/$file.bak_`date +%y%m%d`
+    echo "old file backup to $HOME/bk/$file.bak_`date +%y%m%d`"
+    cp $HOME/$file $HOME/dotfiles_bak/$file.bak_`date +%y%m%d`
   fi
   ln -sf $HOME/dotfiles/$file $HOME/$file
   echo "make link $HOME/dotfiles/$file -> $HOME/$file"
@@ -19,6 +18,9 @@ source $HOME/.bashrc
 
 # Download Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Install tmux
+sudo yum -y install tmux
 
 # Download Message Bundles
 echo "setup is complete!"
