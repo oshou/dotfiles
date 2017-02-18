@@ -8,7 +8,7 @@ for file in ${DOT_FILES[@]}
 do
   if [ -e $HOME/$file ];
   then
-    echo "old file backup to $HOME/bk/$file.bak_`date +%y%m%d`"
+    echo "move old dotfiles -> $HOME/bk/$file.bak_`date +%y%m%d`"
     cp $HOME/$file $HOME/dotfiles_bak/$file.bak_`date +%y%m%d`
   fi
   ln -sf $HOME/dotfiles/$file $HOME/$file
@@ -22,6 +22,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # Install tmux
 sudo yum -y install tmux
 
-# Download Message Bundles
+# Download Vundle Plugin
 echo "setup is complete!"
 echo "***** Please open Vim && do BundleInstall *****"
