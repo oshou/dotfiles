@@ -1,7 +1,7 @@
-"Compatible setting
+"Compatiblity
 "-----------------------------------------------------------------------
-set nocompatible
-filetype off
+set nocompatible        "vi互換動作の無効化
+filetype off            "最初にファイルタイプ関連を無効化
 
 
 "Plugin
@@ -17,59 +17,53 @@ Plugin 'kana/vim-smartchr'
 Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
 
-filetype plugin indent on
-
 
 "Basic
 "-----------------------------------------------------------------------
-set number          "行番号表示"
-set nolist          "タブ、行末の不可視文字を非表示"
-set cursorline      "カーソル行をハイライト"
-set infercase       "補完の時大文字小文字を区別しない"
-set showmatch       "閉じ括弧の入力時対応する括弧を表示"
+set number              "行番号表示"
+set ruler               "ルーラー表示"
+set nolist              "タブ、行末の不可視文字(空白等)を非表示"
+set cursorline          "カーソル行をハイライト"
+set infercase           "補完の時大文字小文字を区別しない"
+set showmatch           "閉じ括弧の入力時対応する括弧を表示"
 set matchtime=1
 augroup cch
   autocmd!  cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-set ttyfast         "高速ターミナル接続を行う"
-set wrap            "ウィンドウ幅より長い行は折り返し"
+set ttyfast             "ターミナル接続を高速化"
+set wrap                "ウィンドウ幅より長い行は折り返し"
 set showmode
-set scrolloff=5     "スクロール時に下余白確保"
+set scrolloff=5         "スクロール時に下余白確保"
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
-set clipboard+=unnamed,autoselect
+set clipboard+=unnamed,autoselect   "OSクリップボードを使用"
 
 
 "Status bar
 "-----------------------------------------------------------------------
-set title           "編集ファイル名を表示"
-set ruler           "ルーラー表示"
-set wildmenu        "補完機能を強化
-set showcmd         "入力中のコマンドを画面最下部に表示する"
+set title               "ステータスバーに編集中のファイル名を表示"
+set showcmd             "ステータスバーに入力中のコマンドを表示"
+set laststatus=2        "最下ウィンドウにステータスを常に表示"
+set wildmenu            "補完機能を強化
+set cmdheight=2         "コマンドライン用の画面行数"
 set linespace=0
-set laststatus=2    "最下ウィンドウにステータスを常に表示"
-set cmdheight=2     "コマンドライン用の画面行数"
 
 
 "Indent
 "-----------------------------------------------------------------------
-set autoindent      "自動インデント"
-"set paste          "ペースト時にautoindentを無効にする
-set smartindent     "新しい行の開始位置を現在行と同じ場所にする
+set autoindent          "自動インデントを有効化"
+set paste               "ペースト時にautoindentを無効にする
+set smartindent         "改行時に開始位置を現在行と同じ場所にする
 set tabstop=2 shiftwidth=2 softtabstop=0
-set expandtab
+set expandtab           "Tabを半角スペースで挿入"
 set smarttab
 set display=lastline
 set formatoptions+=mM
 
 if has("autocmd")
-  "ファイルタイプの検索を有効にする
-  filetype plugin on
-  "そのファイルタイプにあわせたインデントを利用する
-  filetype indent on
-  " これらのftではインデントを無効に
-  "autocmd FileType php filetype indent off
+  filetype plugin on    "ファイルタイプに合わせたプラグインを有効化
+  filetype indent on    "ファイルタイプに合わせたインデントを有効化
 
   autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et
@@ -112,31 +106,30 @@ set fileencoding=utf-8  "ファイルエンコード"
 "-----------------------------------------------------------------------
 syntax on
 highlight LineNr ctermfg=darkgrey
-filetype plugin indent on
 
 
 "Backup
 "-----------------------------------------------------------------------
-set nobackup
+set nobackup            "バックアップを作成しない
 set noswapfile
 set confirm
 
 
 "Operation
 "-----------------------------------------------------------------------
-set hidden
-set autoread
+set mouse=a             "ターミナルでマウスを使用可能にする"
+set hidden              "複数ファイルの編集を可能にする"
+set autoread            "内容が編集されたら自動再読込"
 set pastetoggle=
-set mouse=a
 
 
 "Search
 "-----------------------------------------------------------------------
-set incsearch       "インクリメンタルサーチ"
-set hlsearch        "検索結果をハイライト表示"
-set ignorecase      "検索時に小文字大文字の区別を無視する"
-set smartcase       "但し大文字小文字混在の検索の場合は区別して検索"
-set wrapscan        "ファイル末尾まで進んだらファイル先頭に戻る"
+set incsearch           "インクリメンタルサーチ"
+set hlsearch            "検索結果をハイライト表示"
+set ignorecase          "検索時に小文字大文字の区別を無視する"
+set smartcase           "但し大文字小文字混在の検索の場合は区別して検索"
+set wrapscan            "ファイル末尾まで進んだらファイル先頭に戻る"
 
 
 "Window
