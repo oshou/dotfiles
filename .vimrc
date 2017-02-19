@@ -33,7 +33,7 @@ augroup cch
   autocmd WinEnter,BufRead * set cursorline
 augroup END
 set ttyfast             "ターミナル接続を高速化"
-set wrap                "ウィンドウ幅より長い行は折り返し"
+set nowrap              "ウィンドウ幅より長い行は折り返し"
 set showmode
 set scrolloff=5         "スクロール時に下余白確保"
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
@@ -54,7 +54,7 @@ set linespace=0
 "-----------------------------------------------------------------------
 set autoindent          "自動インデントを有効化"
 set paste               "ペースト時にautoindentを無効にする
-set smartindent         "改行時に開始位置を現在行と同じ場所にする
+set smartindent         "改行時にインデントを前行と同じにする
 set tabstop=2 shiftwidth=2 softtabstop=0
 set expandtab           "Tabを半角スペースで挿入"
 set smarttab
@@ -126,10 +126,9 @@ set pastetoggle=
 "Search
 "-----------------------------------------------------------------------
 set incsearch           "インクリメンタルサーチ"
-set hlsearch            "検索結果をハイライト表示"
-set ignorecase          "検索時に小文字大文字の区別を無視する"
-set smartcase           "但し大文字小文字混在の検索の場合は区別して検索"
-set wrapscan            "ファイル末尾まで進んだらファイル先頭に戻る"
+set hlsearch            "検索時に結果をハイライト表示"
+set ignorecase          "検索時に大文字小文字を区別しない"
+set wrapscan            "検索時にファイル末尾まで進んだらファイル先頭に戻る"
 
 
 "Window
