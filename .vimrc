@@ -21,10 +21,11 @@ call vundle#end()
 "Basic
 "-----------------------------------------------------------------------
 set number              "行番号表示"
-set ruler               "ルーラー表示"
 set nolist              "タブ、行末の不可視文字(空白等)を非表示"
 set cursorline          "カーソル行をハイライト"
+set scrolloff=5         "スクロール時の余白確保"
 set infercase           "補完の時大文字小文字を区別しない"
+set browsedir=buffer    "Explorerの初期ディレクトリ"
 set showmatch           "閉じ括弧の入力時対応する括弧を表示"
 set matchtime=1
 augroup cch
@@ -34,19 +35,18 @@ augroup cch
 augroup END
 set ttyfast             "ターミナル接続を高速化"
 set nowrap              "ウィンドウ幅より長い行は折り返し"
-set showmode
-set scrolloff=5         "スクロール時に下余白確保"
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
 set clipboard+=unnamed,autoselect   "OSクリップボードを使用"
 
 
 "Status bar
 "-----------------------------------------------------------------------
+set laststatus=2        "ウィンドウ下部にステータスバーを常に表示"
 set title               "ステータスバーに編集中のファイル名を表示"
+set ruler               "ステータスバーにカーソルの行数、列数を表示"
 set showcmd             "ステータスバーに入力中のコマンドを表示"
-set laststatus=2        "最下ウィンドウにステータスを常に表示"
-set wildmenu            "補完機能を強化
-set cmdheight=2         "コマンドライン用の画面行数"
+set cmdheight=2         "ステータスバーのコマンドライン用の画面行数"
+set showmode            "ステータスバーに現在のモードを表示
 set linespace=0
 
 
@@ -98,8 +98,8 @@ endif
 "Encode
 "-----------------------------------------------------------------------
 scriptencoding utf-8    "viとの互換性を取らない"
-set encoding =UTF-8     "エンコード"
-set fileencoding=utf-8  "ファイルエンコード"
+set encoding =UTF-8     "デフォルトのエンコーディング"
+set fileencoding=utf-8  "デフォルトのファイルエンコーディング"
 
 
 "Syntax color
@@ -111,8 +111,8 @@ highlight LineNr ctermfg=darkgrey
 "Backup
 "-----------------------------------------------------------------------
 set nobackup            "バックアップを作成しない
-set noswapfile
-set confirm
+set noswapfile          "swapファイルを作成しない
+set noundofile          "undoファイル(*.un~)を作成しない
 
 
 "Operation
@@ -129,6 +129,7 @@ set incsearch           "インクリメンタルサーチ"
 set hlsearch            "検索時に結果をハイライト表示"
 set ignorecase          "検索時に大文字小文字を区別しない"
 set wrapscan            "検索時にファイル末尾まで進んだらファイル先頭に戻る"
+nmap <silent> <Esc><Esc> :nohlsearch<CR>    "Escキー2回押しでハイライト消去"
 
 
 "Window
@@ -150,11 +151,13 @@ nnoremap + <C-a>
 nnoremap - <C-x>
 nnoremap Y y$
 nnoremap <S-Tab> <<
-nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
 
 "Autocomplete
 "-----------------------------------------------------------------------
+set wildmenu            "コマンド補完を強化
+set wildchar=<tab>      "コマンド補完を開始するキー
+set wildmode=list:full  "コマンド補完時のモード(リスト表示、最長マッチ)
 imap {} {}<Left>
 imap [] []<Left>
 imap () ()<Left>
