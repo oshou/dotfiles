@@ -3,7 +3,6 @@
 set nocompatible        "vi互換動作の無効化
 filetype off            "最初にファイルタイプ関連を無効化
 
-
 "Plugin
 "-----------------------------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -12,7 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/memolist.vim'
 Plugin 'kana/vim-smartchr'
 Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
@@ -21,7 +20,7 @@ call vundle#end()
 "Basic
 "-----------------------------------------------------------------------
 set number              "行番号表示
-set nolist              "不可視文字(タブ、行末の空白文字等)を非表示
+set nolist              "不可視文字(TAB、EOF等)を非表示
 set cursorline          "カーソル行をハイライト
 augroup cch             "カーソル行に罫線
   autocmd!  cch
@@ -35,19 +34,29 @@ set textwidth=0         "一行に長い文章を書いても自動折り返し�
 set nowrap              "ウィンドウ幅より長い行の自動折り返しをしない
 set ttyfast             "ターミナル接続を高速化
 set backspace=indent,eol,start  "バックスペースで各種消せるようにする
-set clipboard+=unnamed,autoselect   "OSクリップボードを使用
+set clipboard=unnamed,autoselect   "OSクリップボードを使用
 set browsedir=buffer    "Explorerの初期ディレクトリ
 
 
-"Status bar
+"Statusline
 "-----------------------------------------------------------------------
 set laststatus=2        "ウィンドウ下部にステータスバーを常に表示
-set title               "ステータスバーに編集中のファイル名を表示
-set ruler               "ステータスバーにカーソルの行数、列数を表示
+set cmdheight=1         "ステータスバーのコマンドライン用の画面行数
 set showcmd             "ステータスバーに入力中のコマンドを表示
-set cmdheight=2         "ステータスバーのコマンドライン用の画面行数
 set showmode            "ステータスバーに現在のモードを表示"
+set ruler               "ステータスバーにカーソルの行数、列数を表示
+set statusline=%m       "ステータスバーに変更有無([+])を表示
+set statusline+=%r      "ステータスバーに読み込み専用の有無を表示
+"set statusline+=%{matchstr(hostname(),'\\w\\+')}@  "ステータスバーにホスト名を表示
+set statusline+=%<%F    "ステータスバーにファイル名を表示
+set statusline+=[%{has('multi_byte')&&\&fileencoding!=''?&fileencoding:&encoding}] "ステータスバーに文字コード表示
 set linespace=0
+
+augroup InsertHook      "挿入モード中はステータスバーの色を変更
+  autocmd!
+  autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340 ctermfg=cyan
+  autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90 ctermfg=white
+augroup END
 
 
 "Indent
@@ -56,8 +65,7 @@ set autoindent          "自動インデントを有効化
 set paste               "ペースト時にautoindentを無効にする
 set smartindent         "改行時にインデント位置を前行と同じにする
 set tabstop=2 shiftwidth=2 softtabstop=0
-set expandtab           "Tabを半角スペースで挿入
-set smarttab
+set expandtab           "TABを半角スペースで挿入
 set display=lastline
 set formatoptions+=mM
 
@@ -119,6 +127,7 @@ set noundofile          "undoファイル(*.un~)を作成しない
 "-----------------------------------------------------------------------
 set mouse=a             "ターミナルでマウスを使用可能にする
 set guioptions+=a
+set confirm             "未保存ファイルがある時は終了前に保存確認
 set hidden              "複数ファイルの編集を可能にする
 set autoread            "内容が編集されたら自動再読込
 set pastetoggle=
@@ -140,33 +149,23 @@ nnoremap J <c-w>j
 nnoremap K <c-w>k
 nnoremap H <c-w>h
 nnoremap L <c-w>l
-map <C-g> :Gtags
-map <C-h> :Gtags -f %<CR>
-map <C-j> :GtagsCursor<CR>
-map <C-n> :cn<CR>
-map <C-p> :cp<CR>
-
-
-"Misc
-"-----------------------------------------------------------------------
-nnoremap + <C-a>
-nnoremap - <C-x>
-nnoremap Y y$
-nnoremap <S-Tab> <<
 
 
 "Autocomplete
 "-----------------------------------------------------------------------
 set wildmenu            "コマンド補完を強化
-set wildchar=<tab>      "コマンド補完を開始するキー
+set wildchar=<TAB>      "コマンド補完を開始するキー
 set wildmode=list:full  "コマンド補完時のモード(リスト表示、最長マッチ)
 set infercase           "コマンド補完時に大文字小文字を区別しない
+
+"閉じ括弧の補完
 imap {} {}<Left>
 imap [] []<Left>
 imap () ()<Left>
 imap '' ''<Left>
 imap "" ""<Left>
 imap \|\| \|\|<Left>
+
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
 inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
