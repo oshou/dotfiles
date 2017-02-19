@@ -20,43 +20,43 @@ call vundle#end()
 
 "Basic
 "-----------------------------------------------------------------------
-set number              "行番号表示"
-set nolist              "タブ、行末の不可視文字(空白等)を非表示"
-set cursorline          "カーソル行をハイライト"
-set scrolloff=5         "スクロール時の余白確保"
-set infercase           "補完の時大文字小文字を区別しない"
-set browsedir=buffer    "Explorerの初期ディレクトリ"
-set showmatch           "閉じ括弧の入力時対応する括弧を表示"
-set matchtime=1
-augroup cch
+set number              "行番号表示
+set nolist              "不可視文字(タブ、行末の空白文字等)を非表示
+set cursorline          "カーソル行をハイライト
+augroup cch             "カーソル行に罫線
   autocmd!  cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-set ttyfast             "ターミナル接続を高速化"
-set nowrap              "ウィンドウ幅より長い行は折り返し"
-set backspace=indent,eol,start  "バックスペースで各種消せるようにする"
-set clipboard+=unnamed,autoselect   "OSクリップボードを使用"
+set scrolloff=5         "スクロール時の余白確保
+set showmatch           "閉じ括弧をハイライト表示
+set matchtime=1         "閉じ括弧をハイライト表示する時間
+set textwidth=0         "一行に長い文章を書いても自動折り返しをしない
+set nowrap              "ウィンドウ幅より長い行の自動折り返しをしない
+set ttyfast             "ターミナル接続を高速化
+set backspace=indent,eol,start  "バックスペースで各種消せるようにする
+set clipboard+=unnamed,autoselect   "OSクリップボードを使用
+set browsedir=buffer    "Explorerの初期ディレクトリ
 
 
 "Status bar
 "-----------------------------------------------------------------------
-set laststatus=2        "ウィンドウ下部にステータスバーを常に表示"
-set title               "ステータスバーに編集中のファイル名を表示"
-set ruler               "ステータスバーにカーソルの行数、列数を表示"
-set showcmd             "ステータスバーに入力中のコマンドを表示"
-set cmdheight=2         "ステータスバーのコマンドライン用の画面行数"
-set showmode            "ステータスバーに現在のモードを表示
+set laststatus=2        "ウィンドウ下部にステータスバーを常に表示
+set title               "ステータスバーに編集中のファイル名を表示
+set ruler               "ステータスバーにカーソルの行数、列数を表示
+set showcmd             "ステータスバーに入力中のコマンドを表示
+set cmdheight=2         "ステータスバーのコマンドライン用の画面行数
+set showmode            "ステータスバーに現在のモードを表示"
 set linespace=0
 
 
 "Indent
 "-----------------------------------------------------------------------
-set autoindent          "自動インデントを有効化"
+set autoindent          "自動インデントを有効化
 set paste               "ペースト時にautoindentを無効にする
-set smartindent         "改行時にインデントを前行と同じにする
+set smartindent         "改行時にインデント位置を前行と同じにする
 set tabstop=2 shiftwidth=2 softtabstop=0
-set expandtab           "Tabを半角スペースで挿入"
+set expandtab           "Tabを半角スペースで挿入
 set smarttab
 set display=lastline
 set formatoptions+=mM
@@ -97,12 +97,12 @@ endif
 
 "Encode
 "-----------------------------------------------------------------------
-scriptencoding utf-8    "viとの互換性を取らない"
-set encoding =UTF-8     "デフォルトのエンコーディング"
-set fileencoding=utf-8  "デフォルトのファイルエンコーディング"
+scriptencoding utf-8    "viとの互換性を取らない
+set encoding =UTF-8     "デフォルトのエンコーディング
+set fileencoding=utf-8  "デフォルトのファイルエンコーディング
 
 
-"Syntax color
+"Color
 "-----------------------------------------------------------------------
 syntax on
 highlight LineNr ctermfg=darkgrey
@@ -117,23 +117,25 @@ set noundofile          "undoファイル(*.un~)を作成しない
 
 "Operation
 "-----------------------------------------------------------------------
-set mouse=a             "ターミナルでマウスを使用可能にする"
-set hidden              "複数ファイルの編集を可能にする"
-set autoread            "内容が編集されたら自動再読込"
+set mouse=a             "ターミナルでマウスを使用可能にする
+set guioptions+=a
+set hidden              "複数ファイルの編集を可能にする
+set autoread            "内容が編集されたら自動再読込
 set pastetoggle=
 
 
 "Search
 "-----------------------------------------------------------------------
-set incsearch           "インクリメンタルサーチ"
-set hlsearch            "検索時に結果をハイライト表示"
-set ignorecase          "検索時に大文字小文字を区別しない"
-set wrapscan            "検索時にファイル末尾まで進んだらファイル先頭に戻る"
-nmap <silent> <Esc><Esc> :nohlsearch<CR>    "Escキー2回押しでハイライト消去"
+set incsearch           "インクリメンタルサーチ
+set ignorecase          "検索時に大文字小文字を区別しない
+set hlsearch            "検索時に結果をハイライト表示
+set wrapscan            "検索時にファイル末尾まで進んだらファイル先頭に戻る
+nmap <ESC><ESC> ;nohlsearch<CR><ESC>   "Escキー2回押しでハイライト消去
 
 
 "Window
 "-----------------------------------------------------------------------
+"Ctrl-hjklでウィンドウ移動
 nnoremap J <c-w>j
 nnoremap K <c-w>k
 nnoremap H <c-w>h
@@ -158,6 +160,7 @@ nnoremap <S-Tab> <<
 set wildmenu            "コマンド補完を強化
 set wildchar=<tab>      "コマンド補完を開始するキー
 set wildmode=list:full  "コマンド補完時のモード(リスト表示、最長マッチ)
+set infercase           "コマンド補完時に大文字小文字を区別しない
 imap {} {}<Left>
 imap [] []<Left>
 imap () ()<Left>
