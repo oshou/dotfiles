@@ -11,7 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/memolist.vim'
+Plugin 'glidenote/memolist.vim'
 Plugin 'kana/vim-smartchr'
 Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
@@ -173,10 +173,20 @@ autocmd BufWritePre * :%s/\s\+$//e
 au BufRead,BufNewFile,BufReadPre *.coffee set filetype=coffee
 
 
-"Bundle Setting/Nertdtree"
+"Bundle Setting/Nertdtree
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
+
+
+"Bundle Setting/memolist
+"-----------------------------------------------------------------------
+let g:memolist_path = "C:\Users\usr0301430\Documents\works\logs\memolist"
+let g:memolist_gfixgrep = 1
+let g:memolist_unite = 1
+nnoremap mn  :MemoNew<CR>
+nnoremap ml  :MemoList<CR>
+nnoremap mg  :MemoGrep<CR>
