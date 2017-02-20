@@ -4,7 +4,6 @@
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
-tmux
 
 # Exports
 export PS1='\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]'
