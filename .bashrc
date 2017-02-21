@@ -6,7 +6,14 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # Exports
-export PS1='\[\033[1;32m\][\u@\h \t \W]\[\033[00m\]'
+HOSTTYPE="dev"
+case "$HOSTTYPE" in
+  "dev") PROMPT_COLOR_NUM=32 ;;
+  "stg") PROMPT_COLOR_NUM=33 ;;
+  "prd") PROMPT_COLOR_NUM=31 ;;
+  *)     PROMPT_COLOR_NUM=35 HOSTTYPE="unknown" ;;
+esac
+export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
 export HISTSIZE=100000
 export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
 export EDITOR="/usr/local/bin/vim"
