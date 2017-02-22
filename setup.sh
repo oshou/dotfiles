@@ -20,7 +20,7 @@ source $HOME/.bashrc
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install tmux
-sudo yum -y install tmux
+#sudo yum -y install tmux
 
 # Download Vundle Plugin
 echo "setup is complete!"
