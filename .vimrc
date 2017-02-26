@@ -1,5 +1,3 @@
-"Compatiblity
-"-----------------------------------------------------------------------
 set nocompatible        "vi互換動作の無効化
 filetype off            "最初にファイルタイプ関連を無効化
 
@@ -9,10 +7,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Shougo/unite.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'kana/vim-smartchr'
 Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
+
+filetype plugin indent on
 
 
 "Basic
@@ -152,9 +154,8 @@ nnoremap L <c-w>l
 "Autocomplete
 "-----------------------------------------------------------------------
 set wildmenu            "コマンド補完を強化
-set wildchar=<TAB>      "コマンド補完を開始するキー
-set wildmode=list:full  "コマンド補完時のモード(リスト表示、最長マッチ)
-set infercase           "コマンド補完時に大文字小文字を区別しない
+"set wildchar=<Tab>      "コマンド補完を開始するキー
+"set wildmode=list:full  "コマンド補完時のモード(リスト表示、最長マッチ)
 
 "閉じ括弧の補完
 imap {} {}<Left>
