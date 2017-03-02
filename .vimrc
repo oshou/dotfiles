@@ -26,7 +26,7 @@ filetype plugin indent on
 "行番号表示
 set number
 "不可視文字(TAB,EOF等)を非表示
-set nolist
+set list
 "カーソル行をハイライト
 set cursorline
 "カーソル行に罫線
@@ -51,7 +51,8 @@ set ttyfast
 set backspace=indent,eol,start
 "OSクリップボードを使用
 set clipboard=unnamed,autoselect
-set browsedir=buffer    "Explorerの初期ディレクトリ
+"Explorerの初期ディレクトリ
+set browsedir=buffer
 
 
 "Statusline
@@ -187,6 +188,7 @@ set hlsearch
 set wrapscan
 "Escの2回押しでハイライト消去
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+imap { {}<Left>
 
 "Window
 "-----------------------------------------------------------------------
@@ -207,12 +209,12 @@ set wildchar=<Tab>
 set wildmode=list:full
 
 "閉じ括弧の補完
-imap {} {}<Left>
-imap [] []<Left>
-imap () ()<Left>
-imap '' ''<Left>
-imap "" ""<Left>
-imap `` ``<Left>
+inoremap { {}<Left>
+imap [] []<LEFT>
+imap () ()<LEFT>
+imap '' ''<LEFT>
+imap "" ""<LEFT>
+imap `` ``<LEFT>
 imap \|\| \|\|<Left>
 
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
