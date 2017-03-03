@@ -26,7 +26,7 @@ filetype plugin indent on
 "行番号表示
 set number
 "不可視文字(TAB,EOF等)を非表示
-set list
+set nolist
 "カーソル行をハイライト
 set cursorline
 "カーソル行に罫線
