@@ -10,11 +10,17 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+"パッケージ管理
 Plugin 'VundleVim/Vundle.vim'
+"vim用統合UI
 Plugin 'Shougo/unite.vim'
+"ディレクトリをTree表示
 Plugin 'scrooloose/nerdtree'
+"構文チェック
 Plugin 'scrooloose/syntastic'
+"文字操作系の一部自動化
 Plugin 'kana/vim-smartchr'
+"インデント整理
 Plugin 'vim-scripts/Super-Shell-Indent'
 call vundle#end()
 
