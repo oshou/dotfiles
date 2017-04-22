@@ -3,13 +3,13 @@
 DOT_FILES=(.bash_logout .bash_profile .bashrc .tmux.conf .vimrc)
 
 # Set dotfiles symbolic link
-mkdir -p $HOME/dotfiles_bak
+mkdir -p $HOME/dotfiles/bk
 for file in ${DOT_FILES[@]}
 do
   if [ -e $HOME/$file ];
   then
     echo "move old dotfiles -> $HOME/bk/$file.bak_`date +%y%m%d`"
-    cp $HOME/$file $HOME/dotfiles_bak/$file.bak_`date +%y%m%d`
+    cp $HOME/$file $HOME/dotfiles/bk/$file.bak_`date +%y%m%d`
   fi
   ln -sf $HOME/dotfiles/$file $HOME/$file
   echo "make link $HOME/dotfiles/$file -> $HOME/$file"
