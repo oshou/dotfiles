@@ -26,7 +26,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-
 "Basic
 "-----------------------------------------------------------------------
 "行番号表示
@@ -35,24 +34,26 @@ set number
 set nolist
 "カーソル行をハイライト
 set cursorline
+"補完の時大文字小文字を区別しない
+set infercase
+"閉じ括弧をハイライト表示
+set showmatch
+"閉じ括弧をハイライト表示する時間
+set matchtime=1
 "カーソル行に罫線
 augroup cch
   autocmd!  cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-"スクロール時の余白確保
-set scrolloff=5
-"閉じ括弧をハイライト表示
-set showmatch
-"閉じ括弧をハイライト表示する時間
-set matchtime=1
-"一行に長文を書いても自動折り返しをしない
-set textwidth=0
-"ウィンドウ幅より長文になる行の自動折返しをしない
-set nowrap
 "ターミナル接続を高速化
 set ttyfast
+"ウィンドウ幅より長文になる行の自動折返しをしない
+set nowrap
+"スクロール時の余白確保
+set scrolloff=5
+"一行に長文を書いても自動折り返しをしない
+set textwidth=0
 "バックスペースで各種消せるようにする
 set backspace=indent,eol,start
 "OSクリップボードを使用
@@ -99,11 +100,12 @@ set autoindent
 set paste
 "ペーストモード(ペースト時インデントズレ無しモード)への切替 F11キー
 set pastetoggle=<F11>
-"開業時にインデント位置を前行と同じにする
+"改行時にインデント位置を前行と同じにする
 set smartindent
 set tabstop=2 shiftwidth=2 softtabstop=0
 "Tabを半角スペースに置き換え
 set expandtab
+"長文折り返しの複数行を可能な限り表示
 set display=lastline
 set formatoptions+=mM
 
@@ -161,11 +163,11 @@ highlight LineNr ctermfg=darkgrey
 
 "Backup
 "-----------------------------------------------------------------------
-"バックアップを作成しない
+"バックアップ(*.txt~等)を作成しない
 set nobackup
-"swapファイルを作成しない
+"swapファイル(*.swp等)を作成しない
 set noswapfile
-"undoファイル(*.un~)を作成しない
+"undoファイル(*.un~等)を作成しない
 set noundofile
 
 
@@ -174,7 +176,7 @@ set noundofile
 "ターミナルでマウスを使用可能にする
 set mouse=a
 set guioptions+=a
-"未保存ファイルがある時は終了前に保存確認
+"未保存の更新がある場合は終了前に保存確認
 set confirm
 "複数ファイルの編集を可能にする
 set hidden
@@ -188,13 +190,13 @@ set autoread
 set incsearch
 "検索時に大文字小文字を区別しない
 set ignorecase
-"検索時に結果をハイライト表示
+"検索結果をハイライト表示
 set hlsearch
-"検索時にファイル末尾まで進んだらファイル先頭に戻る
+"ファイル末尾まで進んだらファイル先頭に戻る
 set wrapscan
 "Escの2回押しでハイライト消去
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-imap { {}<Left>
+
 
 "Window
 "-----------------------------------------------------------------------
@@ -213,15 +215,17 @@ set wildmenu
 set wildchar=<Tab>
 "コマンド保管時のモード
 set wildmode=list:full
+"補完メニューの高さ
+set pumheight=10
 
 "閉じ括弧の補完
 inoremap { {}<Left>
-imap [] []<LEFT>
-imap () ()<LEFT>
-imap '' ''<LEFT>
-imap "" ""<LEFT>
-imap `` ``<LEFT>
-imap \|\| \|\|<Left>
+inoremap [] []<LEFT>
+inoremap () ()<LEFT>
+inoremap '' ''<LEFT>
+inoremap "" ""<LEFT>
+inoremap `` ``<LEFT>
+inoremap \|\| \|\|<Left>
 
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
 inoremap <expr> # smartchr#one_of('# ','#')
