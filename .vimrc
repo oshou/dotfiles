@@ -178,7 +178,7 @@ set mouse=a
 set guioptions+=a
 "未保存の更新がある場合は終了前に保存確認
 set confirm
-"複数ファイルの編集を可能にする
+"ファイル編集中に他ファイルの編集を可能にする
 set hidden
 "内容が編集されたら自動読み込み
 set autoread
@@ -192,7 +192,7 @@ set incsearch
 set ignorecase
 "検索結果をハイライト表示
 set hlsearch
-"ファイル末尾まで進んだらファイル先頭に戻る
+"検索がファイル末尾まで進んだらファイル先頭から再検索
 set wrapscan
 "Escの2回押しでハイライト消去
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
@@ -232,6 +232,7 @@ inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
 autocmd BufWritePre * :%s/\s\+$//e
 
+syntax on
 
 "Bundle Setting/Nertdtree
 "-----------------------------------------------------------------------
