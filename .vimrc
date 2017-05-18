@@ -115,6 +115,9 @@ if has("autocmd")
   "ファイルタイプに合わせたインデントを有効化
   filetype indent on
 
+  "sw=tabstop 新規挿入、シフトオペレータで削除されるスペース数
+  "ts=tabstop タブを画面上半角スペースいくつに展開するか
+  "sts=softtabstop キーボードでTabキーを押した際に挿入されるスペース数
   autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
@@ -128,7 +131,7 @@ if has("autocmd")
   autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
   autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
   autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType php        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
