@@ -12,8 +12,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "パッケージ管理
 Plugin 'VundleVim/Vundle.vim'
-"vim用統合UI
-Plugin 'Shougo/unite.vim'
 "ディレクトリをTree表示
 Plugin 'scrooloose/nerdtree'
 "構文チェック
@@ -22,6 +20,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kana/vim-smartchr'
 "インデント整理
 Plugin 'vim-scripts/Super-Shell-Indent'
+"vim用統合UI
+Plugin 'Shougo/unite.vim'
 call vundle#end()
 
 filetype plugin indent on
