@@ -6,3 +6,12 @@
 - 環境問わず使える最低限の共通手順のみを入れる
 - .bashrc内のホストタイプを指定すると、本番、ステージング、開発でコマンドプロンプトの色を変更可能
 (本番＝赤、ステージング＝黄色、開発＝緑)
+
+## 実行手順
+setup_dotfiles.shを実行すると実行ユーザー個別のdotfiles(.bashrc,.vimrc等)が書き換わります。
+旧ファイルはdotfiles内にバックアップが作成されます。
+1. $ git clone http://xxxxxxxx
+2. $ cd dotfiles
+3. $ ./setup_dotfiles.sh
+4. $ vim
+5. $ vim画面上で「:BundleInstall」実行
