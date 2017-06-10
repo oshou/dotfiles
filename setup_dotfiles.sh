@@ -22,4 +22,4 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Download Vundle Plugin
 echo "setup is complete!"
-echo "***** Please open Vim && do BundleInstall *****"
+echo "***** Please exec 'vim' && exec ':BundleInstall'' *****"

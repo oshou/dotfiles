@@ -8,9 +8,9 @@ fi
 # Exports
 HOSTTYPE="dev"
 case "$HOSTTYPE" in
-  "dev") PROMPT_COLOR_NUM=32 ;;
-  "stg") PROMPT_COLOR_NUM=33 ;;
-  "prd") PROMPT_COLOR_NUM=31 ;;
+  "dev") PROMPT_COLOR_NUM=32 ;;  # PromptColor -> green
+  "stg") PROMPT_COLOR_NUM=33 ;;  # PromptColor -> yellow
+  "prd") PROMPT_COLOR_NUM=31 ;;  # PromptColor -> red
   *)     PROMPT_COLOR_NUM=35 HOSTTYPE="unknown" ;;
 esac
 export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
