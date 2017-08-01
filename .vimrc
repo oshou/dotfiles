@@ -221,12 +221,12 @@ set pumheight=10
 
 "閉じ括弧の補完
 inoremap { {}<Left>
-inoremap [] []<LEFT>
-inoremap () ()<LEFT>
-inoremap '' ''<LEFT>
-inoremap "" ""<LEFT>
-inoremap `` ``<LEFT>
-inoremap \|\| \|\|<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap ' ''<Left>
+inoremap " ""<Left>
+inoremap ` ``<Left>
+inoremap \| \|\|<Left>
 
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
 inoremap <expr> # smartchr#one_of('# ','#')
