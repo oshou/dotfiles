@@ -10,18 +10,20 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
-"パッケージ管理
+"Plugin manager
 Plugin 'VundleVim/Vundle.vim'
-"ディレクトリをTree表示
+"directory tree
 Plugin 'scrooloose/nerdtree'
-"構文チェック
+"Syntax checker
 Plugin 'scrooloose/syntastic'
-"文字操作系の一部自動化
+"automation for text operation
 Plugin 'kana/vim-smartchr'
-"インデント整理
+"Indent
 Plugin 'vim-scripts/Super-Shell-Indent'
-"vim用統合UI
+"UI Integration
 Plugin 'Shougo/unite.vim'
+"Github client
+Plugin 'lambdalisue/gina.vim'
 call vundle#end()
 
 filetype plugin indent on
