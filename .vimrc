@@ -24,6 +24,8 @@ Plugin 'vim-scripts/Super-Shell-Indent'
 Plugin 'Shougo/unite.vim'
 "Github client
 Plugin 'lambdalisue/gina.vim'
+"vim theme
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 
 filetype plugin indent on
@@ -35,6 +37,8 @@ set number
 "不可視文字(TAB,EOF等)を非表示
 set nolist
 "カーソル行をハイライト
+set lines=64 columns=216
+"補完の時大文字小文字を区別しない
 set cursorline
 "補完の時大文字小文字を区別しない
 set infercase
@@ -161,7 +165,9 @@ set fileencoding=utf-8
 "Color
 "-----------------------------------------------------------------------
 syntax on
-highlight LineNr ctermfg=darkgrey
+syntax enable
+set background=dark
+colorscheme solarized
 
 
 "Backup
