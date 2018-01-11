@@ -26,6 +26,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'lambdalisue/gina.vim'
 "vim theme
 Plugin 'altercation/vim-colors-solarized'
+"serverspec-snippets
+Bundle 'glidenote/serverspec-snippets'
 call vundle#end()
 
 filetype plugin indent on
@@ -243,10 +245,17 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 syntax on
 
-"Bundle Setting/Nertdtree
+"Bundle Setting/Nerdtree
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
+
+"Bundle Setting/Serverspec-snippets
+"-----------------------------------------------------------------------
+let g:neosnippet#snippets_directory = [
+      \'~/.vim/snippets',
+      \'~/.vim/bundle/serverspec-snippets',
+      \]

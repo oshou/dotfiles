@@ -18,6 +18,9 @@ export HISTSIZE=100000
 export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
 export EDITOR="/usr/local/bin/vim"
 
+# for Ruby
+export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+
 # Aliases
 alias ~="cd ~"
 alias .="cd .."
