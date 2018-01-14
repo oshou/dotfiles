@@ -1,8 +1,8 @@
 "Compatibility
 "-----------------------------------------------------------------------
-"vi互換動作の無効化
+"Disable vi compatible behavior
 set nocompatible
-"最初にファイルタイプ関連を無効化
+"Disable file type
 filetype off
 
 "Plugin
@@ -12,11 +12,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 "Plugin manager
 Plugin 'VundleVim/Vundle.vim'
-"directory tree
+"Show directory tree
 Plugin 'scrooloose/nerdtree'
 "Syntax checker
 Plugin 'scrooloose/syntastic'
-"automation for text operation
+"Automation for text operation
 Plugin 'kana/vim-smartchr'
 "Indent
 Plugin 'vim-scripts/Super-Shell-Indent'
@@ -24,39 +24,33 @@ Plugin 'vim-scripts/Super-Shell-Indent'
 Plugin 'Shougo/unite.vim'
 "Github client
 Plugin 'lambdalisue/gina.vim'
-"vim theme
-Plugin 'altercation/vim-colors-solarized'
-"serverspec-snippets
-Bundle 'glidenote/serverspec-snippets'
 call vundle#end()
 
 filetype plugin indent on
 
 "Basic
 "-----------------------------------------------------------------------
-"行番号表示
+"Enable linu number
 set number
-"不可視文字(TAB,EOF等)を非表示
+"Hide invisible character(TAB,EOF...)
 set nolist
-"カーソル行をハイライト
+"Highlight the cursor line
 set lines=64 columns=216
-"補完の時大文字小文字を区別しない
+"Highlight the cursor line
 set cursorline
-"補完の時大文字小文字を区別しない
-set infercase
-"閉じ括弧をハイライト表示
+"Highlight closing parentheses
 set showmatch
-"閉じ括弧をハイライト表示する時間
+"Time to Highlight closing parentheses
 set matchtime=1
-"カーソル行に罫線
+"Display ruled line on cursor line
 augroup cch
   autocmd!  cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-"ターミナル接続を高速化
+"Speed up terminal connection
 set ttyfast
-"ウィンドウ幅より長文になる行の自動折返しをしない
+"Auto text wrapping
 set nowrap
 "スクロール時の余白確保
 set scrolloff=5
@@ -102,7 +96,7 @@ augroup END
 
 "Indent
 "-----------------------------------------------------------------------
-"自動インデントを有効化
+"Enable auto indent
 set autoindent
 "ペーストモード(ペースト時インデントズレ無しモード)への切替 F11キー
 set pastetoggle=<F11>
@@ -126,7 +120,7 @@ if has("autocmd")
   "sts=softtabstop キーボードでTabキーを押した際に挿入されるスペース数
   autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType c          setlocal sw=2 sts=2 ts=2 et
   autocmd FileType cpp        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType cs         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
@@ -156,12 +150,12 @@ endif
 
 "Encode
 "-----------------------------------------------------------------------
-"viとの互換性を取らない
-scriptencoding utf-8
-"デフォルトのエンコーディング
+"Default encording
 set encoding =UTF-8
-"デフォルトのファイルエンコーディング
+"Default file encording
 set fileencoding=utf-8
+"Default script encording
+scriptencoding utf-8
 
 
 "Color
@@ -169,16 +163,17 @@ set fileencoding=utf-8
 syntax on
 syntax enable
 set background=dark
-colorscheme solarized
+"Colorscheme
+colorscheme pablo
 
 
 "Backup
 "-----------------------------------------------------------------------
-"バックアップ(*.txt~等)を作成しない
+"Do not create backup file(*.txt~)
 set nobackup
-"swapファイル(*.swp等)を作成しない
+"Do not create swap file(*.swp)
 set noswapfile
-"undoファイル(*.un~等)を作成しない
+"Do not create undo file(*.un~)
 set noundofile
 
 
@@ -197,21 +192,21 @@ set autoread
 
 "Search
 "-----------------------------------------------------------------------
-"インクリメンタルサーチ
+"Incremental search
 set incsearch
-"検索時に大文字小文字を区別しない
+"When searching, Do not distinguish case
 set ignorecase
-"検索結果をハイライト表示
+"Highlight search results
 set hlsearch
-"検索がファイル末尾まで進んだらファイル先頭から再検索
+"When the search reaches the end, Search again from beginning
 set wrapscan
-"Escの2回押しでハイライト消去
+"If you press Esc 2 times, highlight erace
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
 
 "Window
 "-----------------------------------------------------------------------
-"Ctrl-hjklでウィンドウ移動
+"Move between windows with Ctrl-h/j/k/l
 nnoremap J <c-w>j
 nnoremap K <c-w>k
 nnoremap H <c-w>h
@@ -220,16 +215,18 @@ nnoremap L <c-w>l
 
 "Autocomplete
 "-----------------------------------------------------------------------
-"コマンド補完を強化
+"When complementing, Do not distinguish case
+set infercase
+"Enhanced command completion
 set wildmenu
-"コマンド補完を開始するキー
+"Command completion start key
 set wildchar=<Tab>
-"コマンド保管時のモード
+"Command completion mode
 set wildmode=list:full
-"補完メニューの高さ
+"Completion menu height
 set pumheight=10
 
-"閉じ括弧の補完
+"Completion closed parentheses
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
@@ -237,13 +234,13 @@ inoremap ' ''<Left>
 inoremap " ""<Left>
 inoremap ` ``<Left>
 inoremap \| \|\|<Left>
-
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
 inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
 autocmd BufWritePre * :%s/\s\+$//e
 
 syntax on
+
 
 "Bundle Setting/Nerdtree
 "-----------------------------------------------------------------------
@@ -252,10 +249,3 @@ let file_name = expand("%:p")
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
-
-"Bundle Setting/Serverspec-snippets
-"-----------------------------------------------------------------------
-let g:neosnippet#snippets_directory = [
-      \'~/.vim/snippets',
-      \'~/.vim/bundle/serverspec-snippets',
-      \]
