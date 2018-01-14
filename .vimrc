@@ -5,6 +5,7 @@ set nocompatible
 "Disable file type
 filetype off
 
+
 "Plugin
 "-----------------------------------------------------------------------
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,6 +28,7 @@ Plugin 'lambdalisue/gina.vim'
 call vundle#end()
 
 filetype plugin indent on
+
 
 "Basic
 "-----------------------------------------------------------------------
@@ -217,16 +219,16 @@ nnoremap L <c-w>l
 "-----------------------------------------------------------------------
 "When complementing, Do not distinguish case
 set infercase
-"Enhanced command completion
+"Enhanced command complemention
 set wildmenu
-"Command completion start key
+"Command complemention start key
 set wildchar=<Tab>
-"Command completion mode
+"Command complemention mode
 set wildmode=list:full
-"Completion menu height
+"Complemention menu height
 set pumheight=10
 
-"Completion closed parentheses
+"Complemention closed parentheses
 inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap ( ()<Left>
