@@ -122,7 +122,7 @@ if has("autocmd")
   "sts=softtabstop キーボードでTabキーを押した際に挿入されるスペース数
   autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType c          setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
   autocmd FileType cpp        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType cs         setlocal sw=4 sts=4 ts=4 et
   autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
@@ -164,7 +164,8 @@ scriptencoding utf-8
 "-----------------------------------------------------------------------
 syntax on
 syntax enable
-set background=dark
+set t_Co=256
+"set background=dark
 "Colorscheme
 colorscheme pablo
 
@@ -181,7 +182,7 @@ set noundofile
 
 "Operation
 "-----------------------------------------------------------------------
-"ターミナルでマウスを使用可能にする
+"Enable terminal vim
 set mouse=a
 set guioptions+=a
 "未保存の更新がある場合は終了前に保存確認
@@ -248,6 +249,7 @@ syntax on
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
+nnoremap nt :NERDTreeToggle<CR>
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
