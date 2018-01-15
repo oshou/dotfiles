@@ -7,11 +7,17 @@ call vundle#end()
 filetype plugin indent on
 
 
-"Operation
-"-----------------------------------------------------------------------
-"ターミナルでマウスを使用可能にする
-set mouse=a
+set lines=140
+set columns=140
+set cmdheight=2
 set guioptions+=a
+
+
+"Mouse
+"---------------------------------------------------------------------------
+set mouse=
+set nomousefocus
+set mousehide
 
 
 "for Windows
@@ -48,12 +54,6 @@ elseif has('xfontset')
   set guifontset=a14,r14,k14
 endif
 
-set columns=140
-set lines=140
-set cmdheight=2
-nnoremap sn gt
-nnoremap sp gT
-nnoremap st :<C-u>tabnew<CR>
 
 if has('multi_byte_ime') || has('xim')
   " IME ON時??Eカーソルの色を設宁E設定侁E紫)
@@ -72,15 +72,9 @@ if &guioptions =~# 'M'
 endif
 
 
-"Mouse
-"---------------------------------------------------------------------------
-set nomousefocus
-set mousehide
-
-
 "Plugin - [NERDTree]
 "-----------------------------------------------------------------------
-cd $HOME/Documents
+cd $HOME
 
 
 "Plugin - [memolist.vim]
