@@ -8,6 +8,7 @@ filetype off
 
 "Plugin
 "-----------------------------------------------------------------------
+"Runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -32,7 +33,7 @@ filetype plugin indent on
 
 "Basic
 "-----------------------------------------------------------------------
-"Enable linu number
+"Enable line number
 set number
 "Hide invisible character(TAB,EOF...)
 set nolist
@@ -201,7 +202,7 @@ set incsearch
 set ignorecase
 "Highlight search results
 set hlsearch
-"When the search reaches the end, Search again from beginning
+"When the search reaches the end, search again from beginning
 set wrapscan
 "If you press Esc 2 times, highlight erace
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
@@ -245,7 +246,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 syntax on
 
 
-"Bundle Setting/Nerdtree
+"Plugin Setting/Nerdtree
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
