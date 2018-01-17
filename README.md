@@ -12,6 +12,6 @@ setup_dotfiles.shを実行すると実行ユーザー個別のdotfiles(.bashrc,.
 旧ファイルはdotfiles内にバックアップが作成されます。
 1. $ git clone http://xxxxxxxx
 2. $ cd dotfiles
-3. $ ./setup_dotfiles.sh
+3. $ ./setup.sh
 4. $ vim
 5. $ vim画面上で「:BundleInstall」実行
