@@ -22,10 +22,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kana/vim-smartchr'
 "Indent
 Plugin 'vim-scripts/Super-Shell-Indent'
-"UI Integration
-Plugin 'Shougo/unite.vim'
 "Github client
 Plugin 'lambdalisue/gina.vim'
+"Ctag generator
+Plugin 'szw/vim-tags'
+"UI Integration
+"Plugin 'Shougo/unite.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -167,7 +169,6 @@ syntax on
 syntax enable
 set t_Co=256
 "set background=dark
-"Colorscheme
 colorscheme pablo
 
 
@@ -254,3 +255,8 @@ nnoremap nt :NERDTreeToggle<CR>
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
+
+"Plugin Setting/vim-ctags
+"-----------------------------------------------------------------------
+"let g:vim_tags_project_tags_command = "ctags -R {OPTIONS} {DIRECTORY} 2>/dev/null"
+"let g:vim_tags_gems_tags_command = "ctags -R {OPTIONS} `bundle show --paths` 2>/dev/null"

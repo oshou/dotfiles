@@ -49,3 +49,5 @@ alias dstat-cpu='dstat -tplcr'
 alias dstat-mem='dstat -tplcms'
 alias dstat-disk='dstat -tplcdr'
 alias dstat-net='dstat -tpln --socket --tcp --udp --unix'
+
+tmux

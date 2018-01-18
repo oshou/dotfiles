@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly DOT_FILES=(.bash_logout .bash_profile .bashrc .tmux.conf .vimrc)
+readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tmux.conf)
 readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
 
 # Set dotfiles setup
