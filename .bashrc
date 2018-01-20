@@ -16,10 +16,9 @@ esac
 export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
 export HISTSIZE=100000
 export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
-export EDITOR="/usr/local/bin/vim"
 
 # For Ruby
-export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
 
 # Aliases
 alias ~="cd ~"
