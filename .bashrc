@@ -1,16 +1,18 @@
 # .bashrc
 
-# Source global definitions
+# Source global definition
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
 # Exports
 HOSTTYPE="dev"
+# HOSTTYPE="stg"
+# HOSTTYPE="prd"
 case "$HOSTTYPE" in
-  "dev") PROMPT_COLOR_NUM=32 ;;  # PromptColor -> green
-  "stg") PROMPT_COLOR_NUM=33 ;;  # PromptColor -> yellow
-  "prd") PROMPT_COLOR_NUM=31 ;;  # PromptColor -> red
+  "dev") PROMPT_COLOR_NUM=32 ;;  # prompt_color -> green
+  "stg") PROMPT_COLOR_NUM=33 ;;  # prompt_color -> yellow
+  "prd") PROMPT_COLOR_NUM=31 ;;  # prompt_color -> red
   *)     PROMPT_COLOR_NUM=35 HOSTTYPE="unknown" ;;
 esac
 export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
@@ -49,4 +51,5 @@ alias dstat-mem='dstat -tplcms'
 alias dstat-disk='dstat -tplcdr'
 alias dstat-net='dstat -tpln --socket --tcp --udp --unix'
 
+# Launch tmux
 tmux
