@@ -5,7 +5,7 @@ if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
-# Exports
+# Prompt
 HOSTTYPE="dev"
 # HOSTTYPE="stg"
 # HOSTTYPE="prd"
@@ -15,10 +15,11 @@ case "$HOSTTYPE" in
   "prd") PROMPT_COLOR_NUM=31 ;;  # prompt_color -> red
   *)     PROMPT_COLOR_NUM=35 HOSTTYPE="unknown" ;;
 esac
+
+# Exports
 export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
 export HISTSIZE=100000
 export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
-
 # For Ruby
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
 
