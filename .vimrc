@@ -27,7 +27,7 @@ Plugin 'lambdalisue/gina.vim'
 "Ctag generator
 Plugin 'szw/vim-tags'
 "UI Integration
-"Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/unite.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -137,7 +137,7 @@ if has("autocmd")
   autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
   autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType python     setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
