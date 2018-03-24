@@ -133,11 +133,12 @@ if has("autocmd")
   autocmd FileType eruby      setlocal sw=2 sts=2 ts=1 et
   autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType java       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType javascript setlocal sw=4 sts=4 ts=4 et
   autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
   autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType json       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
