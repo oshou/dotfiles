@@ -28,6 +28,8 @@ Plugin 'lambdalisue/gina.vim'
 Plugin 'szw/vim-tags'
 "UI Integration
 Plugin 'Shougo/unite.vim'
+"Grep
+Plugin 'fuenor/qfixgrep'
 call vundle#end()
 
 filetype plugin indent on
@@ -256,6 +258,9 @@ nnoremap nt :NERDTreeToggle<CR>
 if has('vim_starting') &&  file_name == ""
   autocmd VimEnter * execute 'NERDTree ./'
 endif
+
+"Plugin Setting/qfixgrep
+autocmd QuickFixCmdPost *grep* cwindow
 
 "Plugin Setting/vim-ctags
 "-----------------------------------------------------------------------
