@@ -51,6 +51,7 @@ alias dstat-cpu='dstat -tplcr'
 alias dstat-mem='dstat -tplcms'
 alias dstat-disk='dstat -tplcdr'
 alias dstat-net='dstat -tpln --socket --tcp --udp --unix'
+alias dcon='docker exec -it'
 
 # Launch tmux
 tmux
