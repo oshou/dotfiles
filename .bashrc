@@ -1,14 +1,12 @@
 # .bashrc
 
-# Source global definition
+# Load global definition
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
 # Prompt
-HOSTTYPE="dev"
-# HOSTTYPE="stg"
-# HOSTTYPE="prd"
+HOSTTYPE="dev" # dev/stg/pri
 case "$HOSTTYPE" in
   "dev") PROMPT_COLOR_NUM=32 ;;  # prompt_color -> green
   "stg") PROMPT_COLOR_NUM=33 ;;  # prompt_color -> yellow
@@ -17,11 +15,16 @@ case "$HOSTTYPE" in
 esac
 
 # Exports
-export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
+export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\H \t \W]$\[\033[00m\] '
 export HISTSIZE=100000
-export HISTTIMEFORMAT='%Y-%m-%dT%T%z '
+export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
+
 # For Ruby
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
+
+# For Python
+export PYENV_PATH="$HOME/.pyenv"
+
 
 # Aliases
 alias ~="cd ~"
