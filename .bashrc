@@ -27,12 +27,8 @@ export PYENV_PATH="$HOME/.pyenv"
 
 
 # Aliases
-alias ~="cd ~"
-alias .="cd .."
-alias ..="cd ../.."
 alias v="vim"
 alias h="history | tail"
-alias j="jobs"
 alias grep="grep --color=auto"
 alias less="less -N"
 alias rm="rm -i"
@@ -46,7 +42,6 @@ alias pa="ps aux | less"
 alias pag="ps aux | grep"
 alias envg="env | grep"
 alias nts="netstat -pantu"
-alias x="exit"
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias dstat='dstat -tplcmsdrn'
