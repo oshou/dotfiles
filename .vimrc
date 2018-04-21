@@ -30,8 +30,6 @@ Plugin 'szw/vim-tags'
 Plugin 'Shougo/unite.vim'
 "Grep
 Plugin 'fuenor/qfixgrep'
-"Git
-Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 filetype plugin indent on
