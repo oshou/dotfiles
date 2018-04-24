@@ -15,7 +15,7 @@ case "$HOSTTYPE" in
 esac
 
 # Exports
-export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\H \t \W]$\[\033[00m\] '
+export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
 export HISTSIZE=100000
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 
