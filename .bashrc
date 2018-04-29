@@ -16,8 +16,8 @@ esac
 
 # Exports
 export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
-export HISTSIZE=100000
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
+export HISTSIZE=100000
 
 # For Ruby
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
@@ -28,12 +28,12 @@ export PYENV_PATH="$HOME/.pyenv"
 
 # Aliases
 alias v="vim"
-alias h="history | tail"
+alias h="history | less"
 alias grep="grep --color=auto"
 alias less="less -N"
-alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+alias rm="rm -i"
 alias df="df -h"
 alias ls="ls -CF --color=auto"
 alias ll="ls -la"
@@ -42,14 +42,10 @@ alias pa="ps aux | less"
 alias pag="ps aux | grep"
 alias envg="env | grep"
 alias nts="netstat -pantu"
+alias dstat='dstat -tplcmsdrn'
+alias dcon='docker exec -it'
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
-alias dstat='dstat -tplcmsdrn'
-alias dstat-cpu='dstat -tplcr'
-alias dstat-mem='dstat -tplcms'
-alias dstat-disk='dstat -tplcdr'
-alias dstat-net='dstat -tpln --socket --tcp --udp --unix'
-alias dcon='docker exec -it'
 
 # Launch tmux
 tmux

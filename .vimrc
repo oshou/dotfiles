@@ -252,7 +252,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 syntax on
 
 
-"Plugin Setting/Nerdtree
+"Plugin Setting / Nerdtree
 "-----------------------------------------------------------------------
 let NERDTreeShowHidden = 1
 let file_name = expand("%:p")
@@ -262,12 +262,12 @@ if has('vim_starting') &&  file_name == ""
 endif
 
 
-"Plugin Setting/qfixgrep
+"Plugin Setting / qfixgrep
 "-----------------------------------------------------------------------
 autocmd QuickFixCmdPost *grep* cwindow
 
 
-"Plugin 'kien/ctrlp.vim'
+"Plugin Setting / ctrlp.vim
 "-----------------------------------------------------------------------
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
@@ -275,7 +275,7 @@ let g:ctrlp_lazy_update = 1
 let g:ctrlp_max_height = 20
 
 
-"Plugin Setting/vim-ctags
+"Plugin Setting / vim-ctags
 "-----------------------------------------------------------------------
 "let g:vim_tags_project_tags_command = "ctags -R {OPTIONS} {DIRECTORY} 2>/dev/null"
 "let g:vim_tags_gems_tags_command = "ctags -R {OPTIONS} `bundle show --paths` 2>/dev/null"
