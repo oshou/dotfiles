@@ -26,6 +26,8 @@ Plugin 'lambdalisue/gina.vim'
 Plugin 'fuenor/qfixgrep'
 "File Funny search
 Plugin 'kien/ctrlp.vim'
+"PHP Code Sniffer
+Plugin 'stephpy/vim-php-cs-fixer'
 call vundle#end()
 
 filetype plugin indent on
@@ -267,3 +269,10 @@ let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_max_height = 20
+
+
+"Plugin Setting / vim-php-cs-fixer
+"-----------------------------------------------------------------------
+autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+let g:php_cs_fixer_path = $HOME.'/php-cs-fixer'
+let g:php_cs_fixer_level = "all"
