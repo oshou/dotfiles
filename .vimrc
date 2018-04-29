@@ -21,7 +21,7 @@ Plugin 'scrooloose/syntastic'
 "Automation for text operation
 Plugin 'kana/vim-smartchr'
 "Indent
-Plugin 'vim-scripts/Super-Shell-Indent'
+""Plugin 'vim-scripts/Super-Shell-Indent'
 "Github client
 Plugin 'lambdalisue/gina.vim'
 "Ctag generator
@@ -244,7 +244,7 @@ inoremap ' ''<Left>
 inoremap " ""<Left>
 inoremap ` ``<Left>
 inoremap \| \|\|<Left>
-inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ')
+inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ','===')
 inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
 autocmd BufWritePre * :%s/\s\+$//e
