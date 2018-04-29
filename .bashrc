@@ -43,9 +43,10 @@ alias pag="ps aux | grep"
 alias envg="env | grep"
 alias nts="netstat -pantu"
 alias dstat='dstat -tplcmsdrn'
-alias dcon='docker exec -it'
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
+alias dcon='docker exec -it'
+alias dlog='docker logs'
 
 # Launch tmux
 tmux
