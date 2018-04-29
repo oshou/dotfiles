@@ -20,14 +20,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 "Automation for text operation
 Plugin 'kana/vim-smartchr'
-"Indent
-""Plugin 'vim-scripts/Super-Shell-Indent'
 "Github client
 Plugin 'lambdalisue/gina.vim'
-"Ctag generator
-Plugin 'szw/vim-tags'
-"UI Integration
-Plugin 'Shougo/unite.vim'
 "Grep
 Plugin 'fuenor/qfixgrep'
 "File Funny search
@@ -270,12 +264,6 @@ autocmd QuickFixCmdPost *grep* cwindow
 "Plugin Setting / ctrlp.vim
 "-----------------------------------------------------------------------
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_max_height = 20
-
-
-"Plugin Setting / vim-ctags
-"-----------------------------------------------------------------------
-"let g:vim_tags_project_tags_command = "ctags -R {OPTIONS} {DIRECTORY} 2>/dev/null"
-"let g:vim_tags_gems_tags_command = "ctags -R {OPTIONS} `bundle show --paths` 2>/dev/null"
