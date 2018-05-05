@@ -16,20 +16,20 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "Show directory tree
 Plugin 'scrooloose/nerdtree'
-"Syntax Checker
-Plugin 'scrooloose/syntastic'
-"Automation for text operation
-Plugin 'kana/vim-smartchr'
-"Grep
-Plugin 'fuenor/qfixgrep'
 "File Funny search
 Plugin 'kien/ctrlp.vim'
-"Github client
-Plugin 'lambdalisue/gina.vim'
+"Grep
+Plugin 'fuenor/qfixgrep'
+"Automation for text operation
+Plugin 'kana/vim-smartchr'
+"Syntax Checker
+Plugin 'scrooloose/syntastic'
 "Code Fixer(Python)
 Plugin 'tell-k/vim-autopep8'
 "Code Fixer(PHP)
 Plugin 'stephpy/vim-php-cs-fixer'
+"Github client
+Plugin 'lambdalisue/gina.vim'
 call vundle#end()
 
 filetype plugin indent on
@@ -264,6 +264,10 @@ if has('vim_starting') &&  file_name == ""
 endif
 
 
+"Plugin Setting / Syntastic
+"-----------------------------------------------------------------------
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+
 "Plugin Setting / qfixgrep
 "-----------------------------------------------------------------------
 autocmd QuickFixCmdPost *grep* cwindow
@@ -276,9 +280,12 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_max_height = 20
 
+
 "Plugin Setting / vim-autopep8
 "-----------------------------------------------------------------------
+let g:autopep8_disable_show_diff = 1
 autocmd BufWritePost *.py silent! call Autopep8()
+
 
 "Plugin Setting / vim-php-cs-fixer
 "-----------------------------------------------------------------------
