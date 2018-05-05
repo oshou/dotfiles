@@ -16,17 +16,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "Show directory tree
 Plugin 'scrooloose/nerdtree'
-"Syntax checker
+"Syntax Checker
 Plugin 'scrooloose/syntastic'
 "Automation for text operation
 Plugin 'kana/vim-smartchr'
-"Github client
-Plugin 'lambdalisue/gina.vim'
 "Grep
 Plugin 'fuenor/qfixgrep'
 "File Funny search
 Plugin 'kien/ctrlp.vim'
-"PHP Code Sniffer
+"Github client
+Plugin 'lambdalisue/gina.vim'
+"Code Fixer(Python)
+Plugin 'tell-k/vim-autopep8'
+"Code Fixer(PHP)
 Plugin 'stephpy/vim-php-cs-fixer'
 call vundle#end()
 
@@ -173,16 +175,6 @@ set t_Co=256
 colorscheme pablo
 
 
-"Backup
-"-----------------------------------------------------------------------
-"Do not create backup file(*.txt~)
-set nobackup
-"Do not create swap file(*.swp)
-set noswapfile
-"Do not create undo file(*.un~)
-set noundofile
-
-
 "Operation
 "-----------------------------------------------------------------------
 "Enable terminal vim
@@ -232,6 +224,9 @@ set wildmode=list:full
 "Complemention menu height
 set pumheight=10
 
+"Add space after delimiter
+inoremap , ,<Space>
+
 "Complemention closed parentheses
 inoremap { {}<Left>
 inoremap [ []<Left>
@@ -245,7 +240,18 @@ inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
 autocmd BufWritePre * :%s/\s\+$//e
 
+
 syntax on
+
+
+"Backup
+"-----------------------------------------------------------------------
+"Do not create backup file(*.txt~)
+set nobackup
+"Do not create swap file(*.swp)
+set noswapfile
+"Do not create undo file(*.un~)
+set noundofile
 
 
 "Plugin Setting / Nerdtree
@@ -270,6 +276,9 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 1
 let g:ctrlp_max_height = 20
 
+"Plugin Setting / vim-autopep8
+"-----------------------------------------------------------------------
+autocmd BufWritePost *.py silent! call Autopep8()
 
 "Plugin Setting / vim-php-cs-fixer
 "-----------------------------------------------------------------------
