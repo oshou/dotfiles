@@ -20,6 +20,11 @@ source $HOME/.bashrc
 # Download Vundle.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# Download php-cs-fixer
+cd $HOME
+wget http://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
+chmod a+x php-cs-fixer
+
 # Download Vundle Plugin
 echo "setup is complete!"
 echo "***** Please exec 'vim' && exec ':BundleInstall'' *****"

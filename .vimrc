@@ -30,6 +30,8 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'stephpy/vim-php-cs-fixer'
 "Github client
 Plugin 'lambdalisue/gina.vim'
+"Fixer
+Plugin 'FriendsOfPHP/PHP-CS-Fixer'
 call vundle#end()
 
 filetype plugin indent on
