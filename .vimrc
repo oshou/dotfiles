@@ -31,8 +31,6 @@ Plugin 'FriendsOfPHP/PHP-CS-Fixer'
 Plugin 'stephpy/vim-php-cs-fixer'
 "Github client
 Plugin 'lambdalisue/gina.vim'
-"Fixer
-Plugin 'FriendsOfPHP/PHP-CS-Fixer'
 call vundle#end()
 
 filetype plugin indent on
