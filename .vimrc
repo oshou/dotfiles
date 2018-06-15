@@ -9,7 +9,7 @@ filetype off
 "Plugin
 "-----------------------------------------------------------------------
 "Runtime path
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim,/usr/share/vim/vim81
 
 call vundle#begin()
 "Plugin manager
@@ -19,7 +19,7 @@ Plugin 'scrooloose/nerdtree'
 "File Funny search
 Plugin 'kien/ctrlp.vim'
 "Grep
-Plugin 'fuenor/qfixgrep'
+""Plugin 'fuenor/qfixgrep'
 "Automation for text operation
 Plugin 'kana/vim-smartchr'
 "Syntax Checker
@@ -27,6 +27,7 @@ Plugin 'scrooloose/syntastic'
 "Code Fixer(Python)
 Plugin 'tell-k/vim-autopep8'
 "Code Fixer(PHP)
+Plugin 'FriendsOfPHP/PHP-CS-Fixer'
 Plugin 'stephpy/vim-php-cs-fixer'
 "Github client
 Plugin 'lambdalisue/gina.vim'
@@ -171,7 +172,7 @@ scriptencoding utf-8
 syntax on
 syntax enable
 set t_Co=256
-"set background=dark
+set background=dark
 colorscheme pablo
 
 
@@ -239,7 +240,6 @@ inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ','===')
 inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
 autocmd BufWritePre * :%s/\s\+$//e
-
 
 syntax on
 

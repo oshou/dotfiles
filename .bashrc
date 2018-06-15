@@ -18,13 +18,13 @@ esac
 export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
+export PATH="$PATH:/usr/share/vim/vim81"
 
 # For Ruby
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
 
 # For Python
 export PYENV_PATH="$HOME/.pyenv"
-
 
 # Aliases
 alias v="vim"
