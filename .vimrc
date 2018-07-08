@@ -24,10 +24,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'kana/vim-smartchr'
 "Syntax Checker
 Plugin 'scrooloose/syntastic'
-"Code Fixer(Python)
+"Code Fixer - Python
 Plugin 'tell-k/vim-autopep8'
-"Code Fixer(PHP)
-Plugin 'FriendsOfPHP/PHP-CS-Fixer'
+"Code Fixer - PHP
 Plugin 'stephpy/vim-php-cs-fixer'
 "Github client
 Plugin 'lambdalisue/gina.vim'
@@ -144,6 +143,7 @@ if has("autocmd")
   autocmd FileType json       setlocal sw=4 sts=4 ts=4 et
   autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sh         setlocal sw=2 sts=2 ts=2 et
   autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
   autocmd FileType vb         setlocal sw=4 sts=4 ts=4 et
@@ -153,7 +153,6 @@ if has("autocmd")
   autocmd FileType xml        setlocal sw=2 sts=2 ts=2 et
   autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
   autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
 endif
 
 
@@ -289,6 +288,6 @@ autocmd BufWritePost *.py silent! call Autopep8()
 
 "Plugin Setting / vim-php-cs-fixer
 "-----------------------------------------------------------------------
-autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
-let g:php_cs_fixer_path = $HOME.'/php-cs-fixer'
-let g:php_cs_fixer_level = "all"
+"autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
+"let g:php_cs_fixer_path = $HOME.'/php-cs-fixer'
+"let g:php_cs_fixer_level = "all"
