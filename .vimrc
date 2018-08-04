@@ -224,9 +224,6 @@ set wildmode=list:full
 "Complemention menu height
 set pumheight=10
 
-"Add space after delimiter
-inoremap , ,<Space>
-
 "Complemention closed parentheses
 inoremap { {}<Left>
 inoremap [ []<Left>
@@ -235,6 +232,7 @@ inoremap ' ''<Left>
 inoremap " ""<Left>
 inoremap ` ``<Left>
 inoremap \| \|\|<Left>
+inoremap , ,<Space>
 inoremap <expr> = smartchr#one_of(' = ','=',' == ','==',' === ','===')
 inoremap <expr> # smartchr#one_of('# ','#')
 inoremap <S-Tab> <C-d>
