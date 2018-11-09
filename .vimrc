@@ -30,6 +30,8 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'stephpy/vim-php-cs-fixer'
 "Github client
 Plugin 'lambdalisue/gina.vim'
+"Terraform
+Plugin 'hashivim/vim-terraform'
 call vundle#end()
 
 filetype plugin indent on
@@ -289,3 +291,7 @@ autocmd BufWritePost *.py silent! call Autopep8()
 "autocmd BufWritePost *.php silent! call PhpCsFixerFixFile()
 "let g:php_cs_fixer_path = $HOME.'/php-cs-fixer'
 "let g:php_cs_fixer_level = "all"
+"
+"Plugin Setting / Terraform
+"-----------------------------------------------------------------------
+let g:terraform_fmt_on_save  =  1
