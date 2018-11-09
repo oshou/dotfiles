@@ -24,7 +24,12 @@ export PATH="$PATH:/usr/share/vim/vim81"
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
 
 # For Python
-export PYENV_PATH="$HOME/.pyenv"
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+
+# For PHP
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
 
 # Aliases
 alias v="vim"
@@ -46,6 +51,7 @@ alias envg="env | grep"
 alias dstat='dstat -tplcmsdrn'
 alias dcon='docker exec -it'
 alias dlog='docker logs'
+alias dkillall='docker ps -aq | xargs docker stop | xargs docker rm'
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 
