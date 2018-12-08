@@ -22,6 +22,11 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Download PHP-cs-fixer
 cd $HOME
+wget https://psysh.org/psysh
+chmod +x psysh
+
+# Download PHP-cs-fixer
+cd $HOME
 wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
 chmod a+x $HOME/php-cs-fixer
 

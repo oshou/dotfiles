@@ -20,15 +20,17 @@ export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export PATH="$PATH:/usr/share/vim/vim81"
 
-# For Ruby
+# for Ruby
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
 
-# For Python
-export PATH="$HOME/.pyenv/bin:$PATH"
+# for Python
+export PATH="$PATH:$HOME/.pyenv/bin"
 eval "$(pyenv init -)"
 
-# For PHP
-export PATH="$HOME/.phpenv/bin:$PATH"
+# for PHP
+export PATH="$PATH:/usr/local/bin"
+export PATH="$PATH:$HOME/vendor/bin"
+export PATH="$PATH:$HOME/.phpenv/bin"
 eval "$(phpenv init -)"
 
 # Aliases
