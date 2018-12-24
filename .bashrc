@@ -31,6 +31,7 @@ eval "$(pyenv init -)"
 export PATH="$PATH:/usr/local/bin"
 export PATH="$PATH:$HOME/vendor/bin"
 export PATH="$PATH:$HOME/.phpenv/bin"
+export PATH="$PATH:$HOME/bin"
 eval "$(phpenv init -)"
 
 # Aliases
