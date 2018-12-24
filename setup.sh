@@ -3,12 +3,11 @@
 readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tmux.conf)
 readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
 
-# Set dotfiles setup
+# Setup dotfiles
 mkdir -p ${DOT_FILES_DIR}/bk
 for file in ${DOT_FILES[@]}
 do
-  if [ -e $HOME/$file ];
-  then
+  if [ -e $HOME/$file ];then
     echo "Backup $HOME/$file -> ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d`"
     cp $HOME/$file ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d`
   fi
@@ -22,13 +21,17 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Download Psysh
 cd $HOME
-wget https://psysh.org/psysh
-chmod +x psysh
+if [ ! -e 'psysh' ]; then
+  wget https://psysh.org/psysh
+  chmod +x psysh
+fi
 
 # Download PHP-cs-fixer
 cd $HOME
-wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
-chmod a+x $HOME/php-cs-fixer
+if [ ! -e 'php-cs-fixer' ];then
+  wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
+  chmod a+x $HOME/php-cs-fixer
+fi
 
 # Download Vim Plugin
 echo "setup is complete!"
