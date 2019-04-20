@@ -34,6 +34,12 @@ export PATH="$PATH:$HOME/.phpenv/bin"
 export PATH="$PATH:$HOME/bin"
 eval "$(phpenv init -)"
 
+# for Go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 # Aliases
 alias v="vim"
 alias h="history | less"
