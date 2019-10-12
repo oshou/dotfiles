@@ -21,31 +21,15 @@ export HISTSIZE=100000
 export PATH="$PATH:/usr/share/vim/vim81"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 
+# AnyEnv
+eval "$(anyenv init -)"
 # for Ruby
-# git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-export RBENV_ROOT="$HOME/.rbenv"
-export PATH="$PATH:$RBENV_ROOT/bin:/opt/packer"
 eval "$(rbenv init -)"
-
 # for Python
-# git clone https://github.com/yyuu/pyenv.git ~/.pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PATH:$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
-
 # for PHP
-# git clone https://github.com/madumlao/phpenv.git ~/.phpenv
-export PHPENV_ROOT="$HOME/.phpenv"
-export PATH="$PATH:$PHPENV_ROOT/bin:$HOME/bin:$HOME/vendor/bin:/usr/local/bin"
 eval "$(phpenv init -)"
-
 # for Go
-# git clone https://github.com/syndbg/goenv.git ~/.goenv
-export GOENV_ROOT="$HOME/.goenv"
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOENV_ROOT/bin:$GOROOT/bin:$GOPATH/bin
 eval "$(goenv init -)"
 
 # Aliases

@@ -1,4 +1,5 @@
 brew "git"
+brew "anyenv"
 brew "tmux"
 brew "wget"
 brew "telnet"

@@ -22,26 +22,27 @@ if [[ ! -e ~/.vim/bundle/Vundle.vim ]]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
+
 # Download xxxenv
 # for Python
-if [[ ! -e ~/.pyenv ]]; then
+if [ ! `which pyenv` ]; then
   echo "* install pyenv"
-  git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+  anyenv install pyenv
 fi
 # for Go
-if [[ ! -e ~/.goenv ]]; then
+if [ ! `which goenv` ]; then
   echo "* install goenv"
-  git clone https://github.com/syndbg/goenv.git ~/.goenv
+  anyenv install goenv
 fi
 # for PHP
-if [[ ! -e ~/.phpenv ]]; then
+if [ ! `which phpenv` ]; then
   echo "* install phpenv"
-  git clone https://github.com/madumlao/phpenv.git ~/.phpenv
+  anyenv install phpenv
 fi
 # for Ruby
-if [[ ! -e ~/.rbenv ]]; then
+if [ ! `which rbenv` ]; then
   echo "* install rbenv"
-  git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+  anyenv install phpenv
 fi
 
 # Download Vim Plugin
