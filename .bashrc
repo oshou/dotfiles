@@ -21,24 +21,31 @@ export HISTSIZE=100000
 export PATH="$PATH:/usr/share/vim/vim81"
 
 # for Ruby
-export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/opt/packer"
+# git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+export RBENV_ROOT="$HOME/.rbenv"
+export PATH="$PATH:$RBENV_ROOT/bin:/opt/packer"
+eval "$(rbenv init -)"
 
 # for Python
-export PATH="$PATH:$HOME/.pyenv/bin"
+# git clone https://github.com/yyuu/pyenv.git ~/.pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PATH:$PYENV_ROOT/bin"
 eval "$(pyenv init -)"
 
 # for PHP
-export PATH="$PATH:/usr/local/bin"
-export PATH="$PATH:$HOME/vendor/bin"
-export PATH="$PATH:$HOME/.phpenv/bin"
-export PATH="$PATH:$HOME/bin"
+# git clone https://github.com/madumlao/phpenv.git ~/.phpenv
+export PHPENV_ROOT="$HOME/.phpenv"
+export PATH="$PATH:$PHPENV_ROOT/bin:$HOME/bin:$HOME/vendor/bin:/usr/local/bin"
 eval "$(phpenv init -)"
 
 # for Go
+# git clone https://github.com/syndbg/goenv.git ~/.goenv
+export GOENV_ROOT="$HOME/.goenv"
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOENV_ROOT/bin:$GOROOT/bin:$GOPATH/bin
+eval "$(goenv init -)"
 
 # Aliases
 alias v="vim"
@@ -49,10 +56,9 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias df="df -Th"
-alias ls="ls -CF --color=auto"
 alias ll="ls -la"
 alias llg="ls -la | grep"
-alias ps="ps auxf"
+alias ps="ps aux"
 alias psg="ps aux | grep"
 alias nts="netstat -pantu"
 alias ntsg="netstat -pantu | grep"
