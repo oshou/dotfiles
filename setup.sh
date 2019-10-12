@@ -8,8 +8,8 @@ mkdir -p ${DOT_FILES_DIR}/bk
 for file in ${DOT_FILES[@]}
 do
   if [[ -e ~/$file ]];then
-    echo "* backup $HOME/$file -> ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d`"
-    cp ~/$file ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d`
+    echo "* backup $HOME/$file -> ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`"
+    cp ~/$file ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`
   fi
   echo "* create Link ${DOT_FILES_DIR}/$file -> ~/$file"
   ln -sf ${DOT_FILES_DIR}/$file ~/$file
@@ -20,11 +20,6 @@ source ~/.bashrc
 if [[ ! -e ~/.vim/bundle/Vundle.vim ]]; then
   echo "* install Vundle.vim"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
-
-if [[ ! -e ~/bin ]]; then
-  echo "* make ~/bin directory"
-  mkdir ~/bin
 fi
 
 # Download xxxenv
@@ -49,40 +44,6 @@ if [[ ! -e ~/.rbenv ]]; then
   git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 fi
 
-# Download Composer
-cd $HOME/bin
-if [[ ! -e composer ]]; then
-  echo "* install composer"
-  curl -sS https://getcomposer.org/installer | php
-  mv composer.phar composer
-  chmod +x composer
-fi
-
-# Download PHPUnit
-cd $HOME/bin
-if [[ ! -e phpunit ]]; then
-  echo "* install phpunit"
-  wget https://phar.phpunit.de/phpunit-6.5.phar
-  mv phpunit-6.5.phar phpunit
-  chmod +x phpunit
-fi
-
-# Download Psysh
-cd $HOME/bin
-if [[ ! -e psysh ]]; then
-  echo "* install psysh"
-  wget https://psysh.org/psysh
-  chmod +x psysh
-fi
-
-# Download PHP-cs-fixer
-cd $HOME/bin
-if [[ ! -e php-cs-fixer ]];then
-  echo "* install php-cs-fixer"
-  wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer
-  chmod a+x php-cs-fixer
-fi
-
 # Download Vim Plugin
-echo "setup is complete!"
+echo "* auto setup is complete !!"
 echo "***** Please exec 'vim' && exec ':BundleInstall'' *****"
