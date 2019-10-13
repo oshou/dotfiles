@@ -3,3 +3,5 @@
 	email = adf1985adf@gmail.com
 [color]
   ui = true
+[ghq]
+  root = ~/.ghq/src
