@@ -3,6 +3,14 @@
 readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tmux.conf)
 readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
 
+# Initial Setup
+if [ "$(uname)" == 'Darwin' ]; then
+  brew bundle
+elif [ "$(uname)" == 'Linux' ]; then
+  git clone https://github.com/anyenv/anyenv ~/.anyenv
+fi
+
+
 # Setup dotfiles
 mkdir -p ${DOT_FILES_DIR}/bk
 for file in ${DOT_FILES[@]}
@@ -39,11 +47,8 @@ if [ ! `which phpenv` ]; then
   echo "* install phpenv"
   anyenv install phpenv
 fi
-# for Ruby
-if [ ! `which rbenv` ]; then
-  echo "* install rbenv"
-  anyenv install phpenv
-fi
+# Apply
+exec $SHELL -l
 
 # Download Vim Plugin
 echo "* auto setup is complete !!"
