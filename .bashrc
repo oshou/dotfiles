@@ -20,12 +20,11 @@ export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export PATH="$PATH:/usr/share/vim/vim81"
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:$HOME/.anyenv/bin"
 export GOPATH="$GOPATH:$HOME/.ghq/src"
 
 # AnyEnv
 eval "$(anyenv init -)"
-# for Ruby
-eval "$(rbenv init -)"
 # for Python
 eval "$(pyenv init -)"
 # for PHP
