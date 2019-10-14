@@ -1,15 +1,7 @@
 #!/bin/bash
 
-readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tmux.conf)
+readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tmux.conf .gitconfig)
 readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
-
-# Initial Setup
-if [ "$(uname)" == 'Darwin' ]; then
-  brew bundle
-elif [ "$(uname)" == 'Linux' ]; then
-  git clone https://github.com/anyenv/anyenv ~/.anyenv
-fi
-
 
 # Setup dotfiles
 mkdir -p ${DOT_FILES_DIR}/bk
@@ -24,14 +16,20 @@ do
 done
 source ~/.bashrc
 
-# Download Vundle.vim
+# Install common tools
+if [ "$(uname)" == 'Darwin' ]; then
+  brew bundle
+elif [ "$(uname)" == 'Linux' ]; then
+  git clone https://github.com/anyenv/anyenv ~/.anyenv
+fi
+
+# Install Vundle.vim
 if [[ ! -e ~/.vim/bundle/Vundle.vim ]]; then
   echo "* install Vundle.vim"
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-
-# Download xxxenv
+# Install xxxenv
 # for Python
 if [ ! `which pyenv` ]; then
   echo "* install pyenv"
@@ -50,6 +48,6 @@ fi
 # Apply
 exec $SHELL -l
 
-# Download Vim Plugin
+# Install Vim Plugin
 echo "* auto setup is complete !!"
 echo "***** Please exec 'vim' && exec ':BundleInstall'' *****"
