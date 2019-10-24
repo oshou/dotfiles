@@ -30,6 +30,7 @@ eval "$(phpenv init -)"
 eval "$(goenv init -)"
 
 # Aliases
+# - Common
 alias v="vim"
 alias h="history | less"
 alias grep="grep --color=auto"
@@ -38,32 +39,42 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
 alias df="df -Th"
-alias ga="git add -A"
-alias gc="git commit -m "
-alias gs="git status"
-alias gd="git diff"
-alias gp="git pull"
 alias ll="ls -la"
 alias llg="ll | grep"
 alias llp="ll | peco"
-alias ps="ps -u"
+alias ps="ps"
 alias psg="ps | grep"
 alias psp="ps | peco"
 alias ntsg="netstat | grep"
 alias ntsp="netstat | peco"
 alias envg="env | grep"
 alias envp="env | peco"
+alias bashrc="vim ~/.bashrc"
+alias vimrc="vim ~/.vimrc"
+# - Git
+alias ga="git add -A"
+alias gc="git commit -m "
+alias gs="git status"
+alias gd="git diff"
+alias gp="git pull"
+alias gpush="git push origin master"
+# - Golang
+alias gorun='go run main.go'
+alias gci='golangci-lint run'
+# - Docker
 alias dstat='dstat -tplcmsdrn'
 alias dcon='docker exec -it'
 alias dlog='docker logs'
+alias dkill='docker kill'
 alias dkillall='docker ps -aq | xargs docker stop | xargs docker rm'
 alias dimgkillall='docker rmi `docker images -q`'
 alias dcps='docker-compose ps'
 alias dcup='docker-compose up -d'
 alias dckill='docker-compose kill'
 alias dcrm='docker-compose rm -f'
-alias bashrc="vim ~/.bashrc"
-alias vimrc="vim ~/.vimrc"
+# - Go doc
+alias godoc='go doc '
+alias gosrc='go doc -src '
 
 # Launch tmux
 tmux
