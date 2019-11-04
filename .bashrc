@@ -71,6 +71,7 @@ alias dimgkillall='docker rmi `docker images -q`'
 alias dcps='docker-compose ps'
 alias dcup='docker-compose up -d'
 alias dckill='docker-compose kill'
+alias dcdown='docker-compose down'
 alias dcrm='docker-compose rm -f'
 # - Go doc
 alias godoc='go doc '
