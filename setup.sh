@@ -20,7 +20,9 @@ source ~/.bashrc
 if [ "$(uname)" == 'Darwin' ]; then
   brew bundle
 elif [ "$(uname)" == 'Linux' ]; then
-  git clone https://github.com/anyenv/anyenv ~/.anyenv
+  if [[ ! -e ~/.anyenv ]]; then
+    git clone https://github.com/anyenv/anyenv ~/.anyenv
+  fi
 fi
 
 # Install Vundle.vim

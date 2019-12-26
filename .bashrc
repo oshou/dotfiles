@@ -19,6 +19,7 @@ export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$HOME/.anyenv/bin:$PATH"
 
 # AnyEnv
 eval "$(anyenv init -)"
