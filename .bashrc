@@ -19,6 +19,7 @@ export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:./vendor/bin"
 
 # AnyEnv
 eval "$(anyenv init -)"
@@ -61,6 +62,8 @@ alias gpush="git push origin master"
 # - Golang
 alias gorun='go run main.go'
 alias gci='golangci-lint run'
+# - PHP
+alias phpbs='php -S localhost:8000'
 # - Docker
 alias dstat='dstat -tplcmsdrn'
 alias dcon='docker exec -it'
