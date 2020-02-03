@@ -21,6 +21,7 @@ export HISTSIZE=100000
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 export PATH="$PATH:./vendor/bin"
 export PATH="$HOME/.anyenv/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH"
 
 # AnyEnv
 eval "$(anyenv init -)"
@@ -65,6 +66,7 @@ alias gorun='go run main.go'
 alias gci='golangci-lint run'
 # - PHP
 alias phpbs='php -S localhost:8000'
+alias phpunit='phpunit --colors'
 # - Docker
 alias dstat='dstat -tplcmsdrn'
 alias dcon='docker exec -it'
