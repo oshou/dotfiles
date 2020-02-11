@@ -57,13 +57,14 @@ alias vimrc="vim ~/.vimrc"
 # - Git
 alias ga="git add -A"
 alias gc="git commit -m "
+alias gam="git commit --amend"
 alias gs="git status"
 alias gd="git diff"
-alias gp="git pull"
+alias gpull="git pull"
 alias gpush="git push origin master"
 # - Golang
 alias gorun='go run main.go'
-alias gsrc='godoc -src'
+alias gsrc='go doc -src'
 alias gci='golangci-lint run'
 # - PHP
 alias phpbs='php -S localhost:8000'
