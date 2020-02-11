@@ -63,6 +63,7 @@ alias gp="git pull"
 alias gpush="git push origin master"
 # - Golang
 alias gorun='go run main.go'
+alias gsrc='godoc -src'
 alias gci='golangci-lint run'
 # - PHP
 alias phpbs='php -S localhost:8000'
@@ -79,9 +80,6 @@ alias dcup='docker-compose up -d'
 alias dckill='docker-compose kill'
 alias dcdown='docker-compose down'
 alias dcrm='docker-compose rm -f'
-# - Go doc
-alias godoc='go doc '
-alias gosrc='go doc -src '
 
 # Launch tmux
 tmux
