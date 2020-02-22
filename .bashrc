@@ -69,18 +69,29 @@ alias gci='golangci-lint run'
 # - PHP
 alias phpbs='php -S localhost:8000'
 alias phpunit='phpunit --colors'
-# - Docker
+# - docker
 alias dstat='dstat -tplcmsdrn'
 alias dcon='docker exec -it'
 alias dlog='docker logs'
 alias dkill='docker kill'
 alias dkillall='docker ps -aq | xargs docker stop | xargs docker rm'
 alias dimgkillall='docker rmi `docker images -q`'
+# - docker-compose
 alias dcps='docker-compose ps'
 alias dcup='docker-compose up -d'
 alias dckill='docker-compose kill'
 alias dcdown='docker-compose down'
 alias dcrm='docker-compose rm -f'
+# - kubectl
+alias kall='kubectl get all -o wide'
+alias kconfig='kubectl config view'
+alias kcontext='kubectl config get-contexts'
+alias kcluster='kubectl config get-clusters'
+alias knode='kubectl get nodes -o wide'
+alias kpod='kubectl get pods -o wide'
+alias kget='kubectl get'
+alias kapply='kubectl apply'
+alias kdescribe='kubectl describe'
 
 # Launch tmux
 tmux
