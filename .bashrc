@@ -53,24 +53,27 @@ alias ntsp="netstat | peco"
 alias envg="env | grep"
 alias envp="env | peco"
 alias bashrc="vim ~/.bashrc"
+alias bashreload="source ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
+alias dstat='dstat -tplcmsdrn'
+alias gip='echo `curl -s ifconfig.me`'
 # - Git
 alias ga="git add -A"
 alias gc="git commit -m "
 alias gam="git commit --amend"
 alias gs="git status"
 alias gd="git diff"
+alias gdc="git diff --cached"
 alias gpull="git pull"
 alias gpush="git push origin master"
 # - Golang
 alias gorun='go run main.go'
-alias gsrc='go doc -src'
+# alias gsrc='go doc -src $1 | peco'
 alias gci='golangci-lint run'
 # - PHP
 alias phpbs='php -S localhost:8000'
 alias phpunit='phpunit --colors'
 # - docker
-alias dstat='dstat -tplcmsdrn'
 alias dcon='docker exec -it'
 alias dlog='docker logs'
 alias dkill='docker kill'
@@ -83,22 +86,35 @@ alias dckill='docker-compose kill'
 alias dcdown='docker-compose down'
 alias dcrm='docker-compose rm -f'
 # - kubectl
+alias kapply='kubectl apply'
+alias kdelete='kubectl delete'
+alias kget='kubectl get'
+alias kdesc='kubectl describe'
+alias kcon='kubectl exec -it'
 alias kall='kubectl get all -o wide'
 alias kconfig='kubectl config view'
-alias kcontext='kubectl config get-contexts'
-alias kcluster='kubectl config get-clusters'
-alias knode='kubectl get nodes -o wide'
-alias kpod='kubectl get pods -o wide'
-alias kget='kubectl get'
-alias kapply='kubectl apply'
-alias kdescribe='kubectl describe'
+alias kctx='kubectl config get-contexts'
+alias kcls='kubectl config get-clusters'
+alias kns='kubectl get namespaces'
+alias knodes='kubectl get nodes -o wide'
+alias kpods='kubectl get pods -o wide'
+alias kdep='kubectl get deployments -o wide'
+alias krs='kubectl get replicasets -o wide'
+alias kss='kubectl get statefulsets -o wide'
+alias kds='kubectl get daemonsets -o wide'
+alias kpvc='kubectl get persistentvolumeclaims -o wide'
+alias kpv='kubectl get persistentvolumes -o wide'
+alias ksvc='kubectl get services -o wide'
+alias ksec='kubectl get secrets -o wide'
+alias kcm='kubectl get configmap -o wide'
+alias kjobs='kubectl get jobs -o wide'
 
 # Launch tmux
 tmux
 
 # Functions
 function ghql() {
-  local selected_file=$(ghq list --full-path | peco --query "$LBUFFER")
+  local selected_file=$(ghq list --full-path | peco)
   if [ -n "$selected_file" ]; then
     if [ -t 1 ]; then
       echo ${selected_file}
@@ -108,3 +124,21 @@ function ghql() {
 }
 bind -x '"\201": ghql'
 bind '"\C-g":"\201\C-m"'
+
+function gsrc() {
+  local query=$(go doc -src $1 | peco | awk -F'[ (]' '{print $2}')
+  if [ -n "$query" ]; then
+    if [ -t 1 ]; then
+      go doc -src $1.${query}
+    fi
+  fi
+}
+
+function gpkg() {
+  local package=$(go list std | peco)
+  if [ -n "$package" ]; then
+    if [ -t 1 ]; then
+      go doc -src ${package}
+    fi
+  fi
+}
