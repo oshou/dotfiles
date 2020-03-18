@@ -47,7 +47,6 @@ if [ ! `which phpenv` ]; then
   echo "* install phpenv"
   anyenv install phpenv
 fi
-composer global require psy/psysh
 
 # Apply
 exec $SHELL -l

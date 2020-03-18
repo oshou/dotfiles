@@ -5,3 +5,4 @@ source ~/.profile
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
+eval "$(jenv init -)"
