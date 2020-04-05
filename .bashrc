@@ -25,12 +25,12 @@ export PATH="$GOPATH/bin:$PATH"
 
 # AnyEnv
 eval "$(anyenv init -)"
+# for Go
+eval "$(goenv init -)"
 # for Python
 eval "$(pyenv init -)"
 # for PHP
 eval "$(phpenv init -)"
-# for Go
-eval "$(goenv init -)"
 
 # Aliases
 # - Common
@@ -77,13 +77,13 @@ alias phpunit='phpunit --colors'
 alias dcon='docker exec -it'
 alias dlog='docker logs'
 alias dkill='docker kill'
-alias dkillall='docker ps -aq | xargs docker stop | xargs docker rm'
+alias ddown='docker ps -aq | xargs docker stop | xargs docker rm'
 alias dimgkillall='docker rmi `docker images -q`'
 # - docker-compose
 alias dcps='docker-compose ps'
 alias dcup='docker-compose up -d'
-alias dckill='docker-compose kill'
 alias dcdown='docker-compose down'
+alias dckill='docker-compose kill'
 alias dcrm='docker-compose rm -f'
 # - kubectl
 alias kapply='kubectl apply'
