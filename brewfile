@@ -51,6 +51,7 @@ cask "tfenv"
 cask "docker"
 cask "virtualbox"
 cask "postman"
+cask "spectacle"
 cask "appcleaner"
 # mas 'Amphetamine', id: 9379847041
 # mas 'Magnet', id: 441258766

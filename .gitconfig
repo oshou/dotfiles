@@ -1,17 +1,5 @@
+[ghq]
+  root = ~/.ghq
 [user]
 	name = oshou
 	email = adf1985adf@gmail.com
-[color]
-  ui = true
-[ghq]
-  root = ~/.ghq/src
-[core]
-	excludesfile = /Users/oshou/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[commit]
-	template = /Users/oshou/.stCommitMsg
