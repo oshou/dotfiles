@@ -60,7 +60,7 @@ alias gip='echo `curl -s ifconfig.me`'
 # - Git
 alias ga="git add -A"
 alias gc="git commit -m "
-alias gam="git commit --amend"
+alias gamend="git commit --amend"
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"

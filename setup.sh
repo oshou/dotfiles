@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tmux.conf .gitconfig)
+readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tigrc .tmux.conf .gitconfig)
 readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
 
 # Setup dotfiles
@@ -19,6 +19,7 @@ source ~/.bashrc
 # Install common tools
 if [ "$(uname)" == 'Darwin' ]; then
   brew bundle
+  brew cleanup
 elif [ "$(uname)" == 'Linux' ]; then
   if [[ ! -e ~/.anyenv ]]; then
     git clone https://github.com/anyenv/anyenv ~/.anyenv
