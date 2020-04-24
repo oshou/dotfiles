@@ -29,8 +29,6 @@ eval "$(anyenv init -)"
 eval "$(goenv init -)"
 # for Python
 eval "$(pyenv init -)"
-# for PHP
-eval "$(phpenv init -)"
 
 # Aliases
 # - Common
@@ -92,7 +90,7 @@ alias kget='kubectl get'
 alias kdesc='kubectl describe'
 alias kcon='kubectl exec -it'
 alias kall='kubectl get all -o wide'
-alias kconfig='kubectl config view'
+alias kconf='kubectl config view'
 alias kctx='kubectl config get-contexts'
 alias kcls='kubectl config get-clusters'
 alias kns='kubectl get namespaces'
