@@ -62,8 +62,11 @@ alias gamend="git commit --amend"
 alias gs="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gbranch="git branch"
 alias gpull="git pull"
 alias gpush="git push origin master"
+# - Terrafrom
+alias tf="terraform"
 # - Golang
 alias gorun='go run main.go'
 # alias gsrc='go doc -src $1 | peco'
@@ -89,11 +92,11 @@ alias kdelete='kubectl delete'
 alias kget='kubectl get'
 alias kdesc='kubectl describe'
 alias kcon='kubectl exec -it'
-alias kall='kubectl get all -o wide'
+alias kall='kubectl get nodes,ing,svc,deploy,rs,sts,ds,jobs,po,cm,secrets,pvc,pv -o wide'
 alias kconf='kubectl config view'
-alias kctx='kubectl config get-contexts'
+alias kctx='kubectx'
 alias kcls='kubectl config get-clusters'
-alias kns='kubectl get namespaces'
+alias kns='kubens'
 alias knodes='kubectl get nodes -o wide'
 alias kpods='kubectl get pods -o wide'
 alias kdep='kubectl get deployments -o wide'
@@ -106,6 +109,13 @@ alias ksvc='kubectl get services -o wide'
 alias ksec='kubectl get secrets -o wide'
 alias kcm='kubectl get configmap -o wide'
 alias kjobs='kubectl get jobs -o wide'
+# - GCP
+alias gclogin='gcloud auth login'
+alias gcauth='gcloud auth list'
+alias gcconf='gcloud config configurations list'
+alias gcpj='gcloud projects list'
+alias gcsvc='gcloud services list'
+alias gcsa='gcloud iam service-accounts list'
 
 # Launch tmux
 tmux

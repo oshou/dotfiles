@@ -15,3 +15,10 @@ setup_dotfiles.shを実行すると実行ユーザー個別のdotfiles(.bashrc,.
 3. $ ./setup.sh
 4. $ vim
 5. $ vim画面上で「:BundleInstall」実行
+
+## Mac設定
+- 電源%表示
+- トラックパッド速度最速
+- 日付&時刻表示
+- アニメーションOFF
+- 画面OFFまでの時間を1hに
