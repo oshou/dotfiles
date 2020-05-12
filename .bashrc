@@ -92,7 +92,7 @@ alias kdelete='kubectl delete'
 alias kget='kubectl get'
 alias kdesc='kubectl describe'
 alias kcon='kubectl exec -it'
-alias kall='kubectl get nodes,ing,svc,deploy,rs,sts,ds,jobs,po,cm,secrets,pvc,pv -o wide'
+alias kall='kubectl get nodes,sa,ing,svc,deploy,rs,sts,ds,jobs,po,cm,secrets,pvc,pv -o wide'
 alias kconf='kubectl config view'
 alias kctx='kubectx'
 alias kcls='kubectl config get-clusters'
@@ -150,3 +150,5 @@ function gpkg() {
     fi
   fi
 }
+
+complete -C /usr/local/Cellar/tfenv/1.0.2/versions/0.12.24/terraform terraform

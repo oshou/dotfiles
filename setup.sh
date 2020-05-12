@@ -52,6 +52,11 @@ fi
 # Apply
 exec $SHELL -l
 
+# VSCode
+code --install-extension coenraads.bracket-pair-colorizer
+code --install-extension ms-vscode.go
+code --install-extension ionutvmi.path-autocomplete
+
 # Install Vim Plugin
 echo "* auto setup is complete !!"
 echo "***** Please exec 'vim' && exec ':BundleInstall'' *****"
