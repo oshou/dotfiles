@@ -22,6 +22,7 @@ export PATH="$PATH:/usr/local/opt/mysql-client/bin"
 export PATH="$PATH:./vendor/bin"
 export PATH="$HOME/.anyenv/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
+export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
 
 # AnyEnv
 eval "$(anyenv init -)"
@@ -116,6 +117,8 @@ alias gcconf='gcloud config configurations list'
 alias gcpj='gcloud projects list'
 alias gcsvc='gcloud services list'
 alias gcsa='gcloud iam service-accounts list'
+# - Terraform
+alias tf='terraform'
 
 # Launch tmux
 tmux
