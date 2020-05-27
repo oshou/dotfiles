@@ -15,7 +15,8 @@ case "$HOSTTYPE" in
 esac
 
 # Exports
-export PS1='\[\033[1;${PROMPT_COLOR_NUM}m\][\u@(${HOSTTYPE})\h \t \W]$\[\033[00m\] '
+source /usr/local/share/kube-ps1.sh
+export PS1='[\u@\h \W $(kube_ps1)]\$ '
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export PATH="$PATH:/usr/local/opt/mysql-client/bin"
@@ -90,6 +91,7 @@ alias dcrm='docker-compose rm -f'
 # - kubectl
 alias kapply='kubectl apply'
 alias kdelete='kubectl delete'
+alias klogs='kubectl logs'
 alias kget='kubectl get'
 alias kdesc='kubectl describe'
 alias kcon='kubectl exec -it'
@@ -123,7 +125,7 @@ alias tf='terraform'
 # Launch tmux
 tmux
 
-# Functions
+# ghq list
 function ghql() {
   local selected_file=$(ghq list --full-path | peco)
   if [ -n "$selected_file" ]; then
@@ -136,6 +138,7 @@ function ghql() {
 bind -x '"\201": ghql'
 bind '"\C-g":"\201\C-m"'
 
+# go doc -src
 function gsrc() {
   local query=$(go doc -src $1 | peco | awk -F'[ (]' '{print $2}')
   if [ -n "$query" ]; then
@@ -145,12 +148,30 @@ function gsrc() {
   fi
 }
 
+# go doc
 function gpkg() {
   local package=$(go list std | peco)
   if [ -n "$package" ]; then
     if [ -t 1 ]; then
       go doc -src ${package}
     fi
+  fi
+}
+
+# switch k8s-context
+function ksw() {
+	kcontext=$(kubectl config get-contexts  | peco --initial-index=1 --prompt='kubectl config use-context > ' |  sed -e 's/^\*//' | awk '{print $1}')
+  if [ -n "$kcontext" ]; then
+  	kubectl config use-context $kcontext
+  fi
+}
+
+# switch gcloud-project
+function gsw() {
+	project=$(gcloud projects list   | peco --initial-index=1 --prompt='gcloud config set project > ' |  sed -e 's/^\*//' | awk '{print $1}')
+  if [ -n "$project" ]; then
+  	echo "Switch to ${project}."
+    gcloud config set project $project
   fi
 }
 
