@@ -19,11 +19,14 @@ source /usr/local/share/kube-ps1.sh
 export PS1='[\u@\h \W $(kube_ps1)]\$ '
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
-export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:$HOME/.anyenv/bin"
+export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:./vendor/bin"
-export PATH="$HOME/.anyenv/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$PATH:/usr/local/opt/mysql-client/bin"
+export PATH="$PATH:/usr/local/opt/bison@2.7/bin"
+export GOOGLE_ACCOUNT_MAIL=dev.oshou04@gmail.com
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
+export PATH="$PATH:/Users/oshou/.anyenv/envs/pyenv/bin"
 
 # AnyEnv
 eval "$(anyenv init -)"
@@ -31,6 +34,8 @@ eval "$(anyenv init -)"
 eval "$(goenv init -)"
 # for Python
 eval "$(pyenv init -)"
+# for PHP
+eval "$(phpenv init -)"
 
 # Aliases
 # - Common
@@ -54,6 +59,7 @@ alias envg="env | grep"
 alias envp="env | peco"
 alias bashrc="vim ~/.bashrc"
 alias bashreload="source ~/.bashrc"
+alias brewfile="vim ~/brewfile"
 alias vimrc="vim ~/.vimrc"
 alias dstat='dstat -tplcmsdrn'
 alias gip='echo `curl -s ifconfig.me`'
@@ -119,11 +125,9 @@ alias gcconf='gcloud config configurations list'
 alias gcpj='gcloud projects list'
 alias gcsvc='gcloud services list'
 alias gcsa='gcloud iam service-accounts list'
-# - Terraform
-alias tf='terraform'
 
 # Launch tmux
-tmux
+# tmux
 
 # ghq list
 function ghql() {
@@ -162,6 +166,7 @@ function gpkg() {
 function ksw() {
 	kcontext=$(kubectl config get-contexts  | peco --initial-index=1 --prompt='kubectl config use-context > ' |  sed -e 's/^\*//' | awk '{print $1}')
   if [ -n "$kcontext" ]; then
+  	echo "[ksw] switch to ${kcontext}."
   	kubectl config use-context $kcontext
   fi
 }
@@ -170,7 +175,7 @@ function ksw() {
 function gsw() {
 	project=$(gcloud projects list   | peco --initial-index=1 --prompt='gcloud config set project > ' |  sed -e 's/^\*//' | awk '{print $1}')
   if [ -n "$project" ]; then
-  	echo "Switch to ${project}."
+  	echo "[gsw] switch to ${project}."
     gcloud config set project $project
   fi
 }
