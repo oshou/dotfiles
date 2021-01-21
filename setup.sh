@@ -1,18 +1,27 @@
 #!/bin/bash
 
-readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tigrc .tmux.conf .gitconfig brewfile)
-readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
+readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
+readonly DOTFILES=(
+  .bash_profile
+  .bashrc
+  .vimrc
+  .gvimrc
+  .tigrc
+  .tmux.conf
+  .gitconfig
+  brewfile
+)
 
 # Setup dotfiles
-mkdir -p ${DOT_FILES_DIR}/bk
-for file in ${DOT_FILES[@]}
+mkdir -p ${DOTFILES_DIR}/bk
+for file in ${DOTFILES[@]}
 do
   if [[ -e ~/$file ]];then
-    echo "* backup $HOME/$file -> ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`"
-    cp ~/$file ${DOT_FILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`
+    echo "* backup $HOME/$file -> ${DOTFILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`"
+    cp ~/$file ${DOTFILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`
   fi
-  echo "* create Link ${DOT_FILES_DIR}/$file -> ~/$file"
-  ln -sf ${DOT_FILES_DIR}/$file ~/$file
+  echo "* create Link ${DOTFILES_DIR}/$file -> ~/$file"
+  ln -sf ${DOTFILES_DIR}/$file ~/$file
 done
 source ~/.bashrc
 
