@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tigrc .tmux.conf .gitconfig)
+readonly DOT_FILES=(.bash_profile .bashrc .vimrc .gvimrc .tigrc .tmux.conf .gitconfig brewfile)
 readonly DOT_FILES_DIR=$(cd $(dirname $0);pwd)
 
 # Setup dotfiles

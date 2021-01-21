@@ -1,3 +1,4 @@
+#tap homebrew/versions
 brew "gcc"
 brew "llvm"
 brew "re2c"
@@ -25,6 +26,7 @@ brew "minikube"
 brew "kubectx"
 brew "kubens"
 brew "kube-ps1"
+brew "argocd"
 brew "stern"
 brew "sqlite"
 brew "jq"
