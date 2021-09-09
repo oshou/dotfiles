@@ -23,12 +23,9 @@ brew "anyenv"
 brew "tfenv"
 brew "direnv"
 brew "mysql-client"
-brew "redis"
 brew "postgresql"
 brew "minikube"
 brew "kubectx"
-brew "kubens"
-brew "kube-ps1"
 brew "argocd"
 brew "stern"
 brew "sqlite"
@@ -57,5 +54,4 @@ cask "spectacle"
 cask "appcleaner"
 cask "skim"
 mas 'Amphetamine', id: 9379847041
-mas 'Magnet', id: 441258766
 mas 'Fotor', id: 503039729
