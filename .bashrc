@@ -1,22 +1,23 @@
 # .bashrc
+alias rdocker="killall Docker && cd /Applications;open -a Docker;cd ~"
 
 # Load global definition
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
 
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+
 # Prompt
-HOSTTYPE="dev" # dev/stg/pri
-case "$HOSTTYPE" in
-  "dev") PROMPT_COLOR_NUM=32 ;;  # prompt_color -> green
-  "stg") PROMPT_COLOR_NUM=33 ;;  # prompt_color -> yellow
-  "prd") PROMPT_COLOR_NUM=31 ;;  # prompt_color -> red
-  *)     PROMPT_COLOR_NUM=35 HOSTTYPE="unknown" ;;
-esac
+if [ $UID -eq 0 ]; then
+    PS1='\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ '
+else
+    PS1='\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ '
+fi
 
 # Exports
-source /usr/local/share/kube-ps1.sh
-export PS1='[\u@\h \W $(kube_ps1)]\$ '
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export PATH="$PATH:$HOME/.anyenv/bin"
@@ -37,6 +38,10 @@ eval "$(pyenv init -)"
 # for PHP
 eval "$(phpenv init -)"
 
+# Direnv
+eval "$(direnv hook bash)"
+
+
 # Aliases
 # - Common
 alias v="vim"
@@ -50,6 +55,8 @@ alias df="df -Th"
 alias ll="ls -la"
 alias llg="ll | grep"
 alias llp="ll | peco"
+alias lsoft="lsof -nP -iTCP"
+alias lsoftg="lsof -nP -iTCP | grep"
 alias ps="ps"
 alias psg="ps | grep"
 alias psp="ps | peco"
