@@ -39,6 +39,8 @@ eval "$(goenv init -)"
 eval "$(pyenv init -)"
 # for PHP
 eval "$(phpenv init -)"
+# for Node
+export PATH=$PATH:./node_modules/.bin
 
 # Direnv
 eval "$(direnv hook bash)"
