@@ -31,8 +31,12 @@ export PATH="$PATH:/usr/local/opt/bison@2.7/bin"
 export GOOGLE_ACCOUNT_MAIL=dev.oshou04@gmail.com
 export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
 
+# gh
+eval "$(gh completion -s bash)"
 # AnyEnv
 eval "$(anyenv init -)"
+# direnv
+eval "$(direnv hook bash)"
 # for Go
 eval "$(goenv init -)"
 # for Python
@@ -61,7 +65,6 @@ alias llg="ll | grep"
 alias llp="ll | peco"
 alias lsoft="lsof -nP -iTCP"
 alias lsoftg="lsof -nP -iTCP | grep"
-alias ps="ps"
 alias psg="ps | grep"
 alias psp="ps | peco"
 alias ntsg="netstat | grep"
@@ -94,6 +97,8 @@ alias gci='golangci-lint run'
 # - PHP
 alias phpbs='php -S localhost:8000'
 alias phpunit='phpunit --colors'
+# - Node
+alias tsnd='ts-node-dev'
 # - docker
 alias dcon='docker exec -it'
 alias dlog='docker logs'
@@ -130,6 +135,8 @@ alias ksvc='kubectl get services -o wide'
 alias ksec='kubectl get secrets -o wide'
 alias kcm='kubectl get configmap -o wide'
 alias kjobs='kubectl get jobs -o wide'
+alias portchk='(){lsof -i4TCP:$1}'
+alias portkill=$'(){lsof -i4TCP:$1 | awk \'NR>1{print "kill -9", $2}\' | bash }'
 # - GCP
 alias gclogin='gcloud auth login'
 alias gcauth='gcloud auth list'
