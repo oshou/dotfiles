@@ -199,4 +199,8 @@ function gsw() {
   fi
 }
 
+function bkup() {
+  cp -rp $1 $1_`date "+%Y%m%d-%H%M%S"`
+}
+
 complete -C /usr/local/Cellar/tfenv/1.0.2/versions/0.12.24/terraform terraform
