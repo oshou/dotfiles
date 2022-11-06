@@ -3,6 +3,6 @@
 	email = adf1985adf@gmail.com
 
 [ghq]
-  root = ~/.ghq
+  root = ~/ghq
 [http]
 	version = HTTP/1.1

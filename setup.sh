@@ -2,6 +2,7 @@
 
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
 readonly DOTFILES=(
+  .zprofile
   .bash_profile
   .bashrc
   .vimrc
@@ -26,6 +27,7 @@ done
 source ~/.bashrc
 
 # Install common tools
+anyenv install --init
 if [ "$(uname)" == 'Darwin' ]; then
   brew bundle
   brew cleanup
@@ -47,6 +49,11 @@ if [ ! `which pyenv` ]; then
   echo "* install pyenv"
   anyenv install pyenv
 fi
+# for Node
+if [ ! `which pyenv` ]; then
+  echo "* install nodenv"
+  anyenv install nodenv
+fi
 # for Go
 if [ ! `which goenv` ]; then
   echo "* install goenv"
@@ -65,6 +72,10 @@ exec $SHELL -l
 code --install-extension coenraads.bracket-pair-colorizer
 code --install-extension ms-vscode.go
 code --install-extension ionutvmi.path-autocomplete
+
+# Mac
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+defaults delete -g ApplePressAndHoldEnabled
 
 # Install Vim Plugin
 echo "* auto setup is complete !!"
