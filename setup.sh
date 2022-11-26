@@ -12,12 +12,12 @@ readonly DOTFILES=(
 )
 
 # Setup dotfiles
-mkdir -p ${DOTFILES_DIR}/bk
+mkdir -p ${DOTFILES_DIR}/backup
 for file in ${DOTFILES[@]}
 do
   if [[ -e ~/$file ]];then
-    echo "* backup $HOME/$file -> ${DOTFILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`"
-    cp ~/$file ${DOTFILES_DIR}/bk/$file.bak_`date +%y%m%d-%H%m%S`
+    echo "* backup $HOME/$file -> ${DOTFILES_DIR}/backup/$file.bak_`date +%y%m%d-%H%m%S`"
+    cp ~/$file ${DOTFILES_DIR}/backup/$file.bak_`date +%y%m%d-%H%m%S`
   fi
   echo "* create Link ${DOTFILES_DIR}/$file -> ~/$file"
   ln -sf ${DOTFILES_DIR}/$file ~/$file
