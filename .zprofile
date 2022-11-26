@@ -15,17 +15,18 @@ else
 fi
 
 # Exports
+export HISTFILE=~/.zsh_history
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export EDITOR=vim
-export PATH="$PATH:$HOME/.anyenv/bin"
+export PATH="$PATH:~/.anyenv/bin"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:./vendor/bin"
 export PATH="$PATH:/usr/local/opt/bison@2.7/bin"
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
 export GOOGLE_ACCOUNT_MAIL=dev.oshou04@gmail.com
-export GOOGLE_APPLICATION_CREDENTIALS=$HOME/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
+export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
 
 # gh
 eval "$(gh completion -s zsh)"
