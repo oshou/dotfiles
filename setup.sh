@@ -2,13 +2,13 @@
 
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
 readonly DOTFILES=(
-  .zprofile
+  Brewfile
   .vimrc
-  .gvimrc
-  .tigrc
-  .tmux.conf
   .gitconfig
-  brewfile
+  .gvimrc
+  .tmux.conf
+  .tigrc
+  .zprofile
 )
 
 # Setup dotfiles

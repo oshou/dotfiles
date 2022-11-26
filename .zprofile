@@ -146,7 +146,7 @@ alias gcsvc='gcloud services list'
 alias gcsa='gcloud iam service-accounts list'
 
 # Launch tmux
-# tmux
+tmux
 
 # ghq list
 function ghql() {
