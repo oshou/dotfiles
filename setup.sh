@@ -3,8 +3,6 @@
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
 readonly DOTFILES=(
   .zprofile
-  .bash_profile
-  .bashrc
   .vimrc
   .gvimrc
   .tigrc
@@ -50,7 +48,7 @@ if [ ! `which pyenv` ]; then
   anyenv install pyenv
 fi
 # for Node
-if [ ! `which pyenv` ]; then
+if [ ! `which nodenv` ]; then
   echo "* install nodenv"
   anyenv install nodenv
 fi
