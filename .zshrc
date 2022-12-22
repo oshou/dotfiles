@@ -1,18 +1,8 @@
 # Patch
 alias rdocker="killall Docker && cd /Applications;open -a Docker;cd ~"
 
-# Get the aliases and functions
-if [ -f ~/.zshrc ]; then
-	. ~/.zshrc
-fi
-
 # Prompt
-GIT_PS1_SHOWDIRTYSTATE=true
-if [ $UID -eq 0 ]; then
-  PS1='\[\033[31m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ '
-else
-  PS1='\[\033[36m\]\u@\h\[\033[00m\]:\[\033[01m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\\$ '
-fi
+eval "$(starship init zsh)"
 
 # Exports
 export HISTFILE=~/.zsh_history
@@ -28,14 +18,8 @@ export PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
 export GOOGLE_ACCOUNT_MAIL=dev.oshou04@gmail.com
 export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
 
-# gh
-eval "$(gh completion -s zsh)"
-# direnv
-eval "$(direnv hook zsh)"
-# AnyEnv
+# anyenv
 eval "$(anyenv init -)"
-# direnv
-eval "$(direnv hook zsh)"
 # for Go
 eval "$(goenv init -)"
 # for Python
@@ -45,12 +29,14 @@ eval "$(phpenv init -)"
 # for Node
 export PATH=$PATH:./node_modules/.bin
 
-# Direnv
+# direnv
 eval "$(direnv hook zsh)"
+# gh
+eval "$(gh completion -s zsh)"
 
 
 # Aliases
-# - Common
+# - common
 alias v="vim"
 alias h="history | less"
 alias grep="grep --color=auto"
@@ -70,16 +56,14 @@ alias ntsg="netstat | grep"
 alias ntsp="netstat | peco"
 alias envg="env | grep"
 alias envp="env | peco"
-alias bashrc="vim ~/.bashrc"
-alias bashprofile="vim ~/.bash_profile"
-alias bashreload="source ~/.bash_profile"
 alias zshrc="vim ~/.zshrc"
 alias zprofile="vim ~/.zprofile"
+alias zreload="source ~/.zshrc"
 alias brewfile="vim ~/brewfile"
 alias vimrc="vim ~/.vimrc"
 alias dstat='dstat -tplcmsdrn'
 alias gip='echo `curl -s ifconfig.me`'
-# - Git
+# - git
 alias ga="git add -A"
 alias gc="git commit -m "
 alias gamend="git commit --amend"
@@ -89,16 +73,16 @@ alias gdc="git diff --cached"
 alias gbranch="git branch"
 alias gpull="git pull"
 alias gpush="git push origin master"
-# - Terrafrom
+# - terraform
 alias tf="terraform"
-# - Golang
+# - golang
 alias gorun='go run main.go'
 # alias gsrc='go doc -src $1 | peco'
 alias gci='golangci-lint run'
-# - PHP
+# - php
 alias phpbs='php -S localhost:8000'
 alias phpunit='phpunit --colors'
-# - Node
+# - node
 alias tsnd='ts-node-dev'
 # - docker
 alias dcon='docker exec -it'
@@ -147,7 +131,7 @@ alias gcsvc='gcloud services list'
 alias gcsa='gcloud iam service-accounts list'
 
 # Launch tmux
-tmux
+#tmux
 
 # ghq list
 function ghql() {

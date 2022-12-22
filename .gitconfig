@@ -1,8 +1,11 @@
 [user]
 	name = oshou
 	email = adf1985adf@gmail.com
-
+[color]
+	ui = true
 [ghq]
   root = ~/ghq
 [http]
 	version = HTTP/1.1
+[credential]
+	helper = osxkeychain

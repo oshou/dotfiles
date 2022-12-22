@@ -1,14 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 
 readonly DOTFILES_DIR=$(cd $(dirname $0);pwd)
 readonly DOTFILES=(
   Brewfile
+  .zshrc
   .vimrc
   .gitconfig
   .gvimrc
   .tmux.conf
   .tigrc
-  .zprofile
 )
 
 echo "* backup & setup dotfiles ..."
@@ -16,13 +16,22 @@ mkdir -p ${DOTFILES_DIR}/backup
 for file in ${DOTFILES[@]}
 do
   if [[ -e ~/$file ]];then
-    echo "* backup $HOME/$file -> ${DOTFILES_DIR}/backup/$file.bak_`date +%Y%m%d-%H%m%S`"
+    echo "* backup ~/$file -> ${DOTFILES_DIR}/backup/$file.bak_`date +%Y%m%d-%H%m%S`"
     cp ~/$file ${DOTFILES_DIR}/backup/$file.bak_`date +%Y%m%d-%H%m%S`
   fi
   echo "* create Link ${DOTFILES_DIR}/$file -> ~/$file"
-  ln -sf ${DOTFILES_DIR}/$file ~/$file
+  ln -fs ${DOTFILES_DIR}/$file ~/$file
 done
-source ~/.bashrc
+
+file='starship.toml'
+if [[ -e ~/.config/$file ]];then
+  echo "* backup ~/.config/$file -> ${DOTFILES_DIR}/backup/$file.bak_`date +%Y%m%d-%H%m%S`"
+  cp ~/.config/$file ${DOTFILES_DIR}/backup/$file.bak_`date +%Y%m%d-%H%m%S`
+fi
+echo "* create Link ${DOTFILES_DIR}/$file -> ~/.config/$file"
+ln -fs ${DOTFILES_DIR}/$file ~/.config/$file
+
+source ~/.zshrc
 
 echo "* setup anyenv ..."
 anyenv install --init
