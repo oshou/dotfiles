@@ -93,6 +93,7 @@ alias dimgkillall='docker rmi `docker images -q`'
 # - docker-compose
 alias dcps='docker-compose ps'
 alias dcup='docker-compose up -d'
+alias dclogs='docker-compose logs'
 alias dcdown='docker-compose down'
 alias dckill='docker-compose kill'
 alias dcrm='docker-compose rm -f'
