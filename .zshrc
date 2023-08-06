@@ -9,8 +9,9 @@ export HISTFILE=~/.zsh_history
 export HISTTIMEFORMAT='[%Y-%m-%d %T%z] '
 export HISTSIZE=100000
 export EDITOR=vim
-export PATH="$PATH:~/.anyenv/bin"
-export PATH="$PATH:$GOPATH/bin"
+export GOROOT="$HOME/.asdf/installs/golang/1.18.10/go"
+export GOPATH="$GOROOT/bin"
+export PATH="$PATH:$GOROOT/bin"
 export PATH="$PATH:./vendor/bin"
 export PATH="$PATH:/usr/local/opt/bison@2.7/bin"
 export PATH="$PATH:/opt/homebrew/bin"
@@ -18,16 +19,8 @@ export PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
 export GOOGLE_ACCOUNT_MAIL=dev.oshou04@gmail.com
 export GOOGLE_APPLICATION_CREDENTIALS=~/.config/gcloud/legacy_credentials/$GOOGLE_ACCOUNT_MAIL/adc.json
 
-# anyenv
-eval "$(anyenv init -)"
-# for Go
-eval "$(goenv init -)"
-# for Python
-eval "$(pyenv init -)"
-# for PHP
-eval "$(phpenv init -)"
-# for Node
-export PATH=$PATH:./node_modules/.bin
+# asdf
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 # direnv
 eval "$(direnv hook zsh)"
@@ -77,7 +70,6 @@ alias gpush="git push origin master"
 alias tf="terraform"
 # - golang
 alias gorun='go run main.go'
-# alias gsrc='go doc -src $1 | peco'
 alias gci='golangci-lint run'
 # - php
 alias phpbs='php -S localhost:8000'
