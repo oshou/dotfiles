@@ -11,3 +11,6 @@
 	helper = osxkeychain
 [pull]
 	rebase = false
+[alias]
+  unstage = reset HEAD
+  stage = add

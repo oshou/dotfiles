@@ -3,6 +3,7 @@ format = """
 $time\
 $directory\
 $git_branch\
+$character
 """
 
 [line_break]
@@ -10,8 +11,8 @@ disabled = true
 
 [character]
 format = "❯ "
-success_symbol = "❯(bold green) "
-error_symbol = "❯(bold red) "
+success_symbol = "❯(green) "
+error_symbol = "❯(red) "
 
 [time]
 disabled = false
@@ -23,14 +24,15 @@ utc_time_offset = "+9"
 [directory]
 disabled = false
 format = "[$path]($style)[$read_only]($read_only_style) "
-style='green'
+style='blue'
 truncation_length = 3
 truncate_to_repo = false
-truncation_symbol = "…/"
+truncation_symbol = "~/"
 
 [git_branch]
+symbol  =  "🍣 "
 disabled = false
-format = "[$branch]($style) "
+format = "[$symbol$branch]($style) "
 style='purple'
 
 [git_status]
