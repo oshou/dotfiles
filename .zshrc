@@ -17,6 +17,8 @@ export PATH="$PATH:./vendor/bin"
 export PATH="$PATH:/usr/local/opt/bison@2.7/bin"
 export PATH="$PATH:/opt/homebrew/bin"
 export PATH="$PATH:/opt/homebrew/opt/mysql-client/bin"
+export PATH="$PATH:$HOME/.asdf/shims"
+export PATH="$PATH:$(go env GOPATH)"
 
 # asdf
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
@@ -177,3 +179,6 @@ function bkup() {
 function gzip() {
   zip $1.zip $1
 }
+
+# bun completions
+[ -s "/Users/saito.nao/.bun/_bun" ] && source "/Users/saito.nao/.bun/_bun"
